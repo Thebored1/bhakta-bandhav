@@ -1,0 +1,26 @@
+# dependencies
+node_modules/
+
+# Next.js build output
+.next/
+out/
+
+# environment secrets
+.env.local
+.env*.local
+
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo
+
+# dev server logs
+dev-*.txt
+
+# Claude Code config
+.claude/
+
+# planning/reference docs (not part of deployment)
+*.pdf
+
+# OS files
+.DS_Store
+Thumbs.db

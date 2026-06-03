@@ -1,0 +1,317 @@
+{
+  "$description": "Bhakta Bandhav — design tokens. Default theme: peach. Palettes: peach · rose · lavender.",
+
+  "color": {
+    "$description": "All colour decisions. Raw palette values live under color.palette; semantic aliases live directly under color.",
+
+    "palette": {
+      "peach": {
+        "cream":        { "$type": "color", "$value": "#FEF9F6", "$description": "Page background — warm near-white" },
+        "cream2":       { "$type": "color", "$value": "#FAF2EC", "$description": "Subtle section background / utility bar" },
+        "cream3":       { "$type": "color", "$value": "#F5E8DF", "$description": "Emphasis section background (join band)" },
+        "paperLine":    { "$type": "color", "$value": "#EDD8CC", "$description": "Dividers, input borders, card borders" },
+        "heading":      { "$type": "color", "$value": "#A8687A", "$description": "Headings, logo text — muted dusty rose" },
+        "headingDeep":  { "$type": "color", "$value": "#8C5566", "$description": "Darker heading / ghost-button hover fill" },
+        "primary":      { "$type": "color", "$value": "#E4B8A4", "$description": "Primary button fill — soft nude peach" },
+        "primaryDeep":  { "$type": "color", "$value": "#D4A090", "$description": "Primary button hover / eyebrow text / drop-cap" },
+        "accent":       { "$type": "color", "$value": "#83B8B2", "$description": "Accent button fill — soft sage teal" },
+        "accentDeep":   { "$type": "color", "$value": "#6AA49E", "$description": "Accent button hover" },
+        "gold":         { "$type": "color", "$value": "#EDDBC4", "$description": "Decorative lines (eyebrow rule, footer rule)" },
+        "ink":          { "$type": "color", "$value": "#6A5C54", "$description": "Body text — warm dark brown-grey" },
+        "muted":        { "$type": "color", "$value": "#9C8C84", "$description": "Secondary / placeholder text" },
+        "onSubtle":     { "$type": "color", "$value": "#6A5C54", "$description": "Text on subtle tinted backgrounds" },
+        "onSubtleMuted":{ "$type": "color", "$value": "#9C8C84", "$description": "Muted text on subtle tinted backgrounds" }
+      },
+
+      "rose": {
+        "cream":        { "$type": "color", "$value": "#FDF7F6" },
+        "cream2":       { "$type": "color", "$value": "#FBEEF1" },
+        "cream3":       { "$type": "color", "$value": "#F7E3E8" },
+        "paperLine":    { "$type": "color", "$value": "#F0D8DF" },
+        "heading":      { "$type": "color", "$value": "#BE2C86" },
+        "headingDeep":  { "$type": "color", "$value": "#962065" },
+        "primary":      { "$type": "color", "$value": "#EC95B4" },
+        "primaryDeep":  { "$type": "color", "$value": "#DE7AA0" },
+        "accent":       { "$type": "color", "$value": "#1FAFCF" },
+        "accentDeep":   { "$type": "color", "$value": "#1796B4" },
+        "gold":         { "$type": "color", "$value": "#E6BACB" },
+        "ink":          { "$type": "color", "$value": "#5F555F" },
+        "muted":        { "$type": "color", "$value": "#8C8190" },
+        "onSubtle":     { "$type": "color", "$value": "#5F555F" },
+        "onSubtleMuted":{ "$type": "color", "$value": "#8C8190" }
+      },
+
+      "lavender": {
+        "cream":        { "$type": "color", "$value": "#FAF7FC" },
+        "cream2":       { "$type": "color", "$value": "#F1ECF8" },
+        "cream3":       { "$type": "color", "$value": "#E8E0F3" },
+        "paperLine":    { "$type": "color", "$value": "#DED2EE" },
+        "heading":      { "$type": "color", "$value": "#8E54B8" },
+        "headingDeep":  { "$type": "color", "$value": "#6E3C95" },
+        "primary":      { "$type": "color", "$value": "#B79AE0" },
+        "primaryDeep":  { "$type": "color", "$value": "#9E7FD2" },
+        "accent":       { "$type": "color", "$value": "#46B5C4" },
+        "accentDeep":   { "$type": "color", "$value": "#2E9CAB" },
+        "gold":         { "$type": "color", "$value": "#D4C4EC" },
+        "ink":          { "$type": "color", "$value": "#585264" },
+        "muted":        { "$type": "color", "$value": "#877F94" },
+        "onSubtle":     { "$type": "color", "$value": "#585264" },
+        "onSubtleMuted":{ "$type": "color", "$value": "#877F94" }
+      }
+    },
+
+    "plate": {
+      "$description": "Watercolour wash tints used in image placeholder tiles. Each tint is three colour stops [a, b, c].",
+      "peach":    { "$type": "color", "$value": ["#EDD0BC", "#EFE0C4", "#E8D0DC"] },
+      "rose":     { "$type": "color", "$value": ["#EDC8D6", "#F3E0BA", "#D6EAD2"] },
+      "mint":     { "$type": "color", "$value": ["#C8DED0", "#DDEAC8", "#D4E4EE"] },
+      "lavender": { "$type": "color", "$value": ["#D8CDE8", "#EDD8E4", "#CCDCE8"] },
+      "gold":     { "$type": "color", "$value": ["#EDE0B4", "#EDD4BC", "#DCEACC"] },
+      "blossom":  { "$type": "color", "$value": ["#EAC0D0", "#E4CCEA", "#F5EACC"] }
+    },
+
+    "semantic": {
+      "$description": "Semantic aliases — resolved from the peach palette (the default theme).",
+      "surface": {
+        "page":     { "$type": "color", "$value": "{color.palette.peach.cream}",  "$description": "Page / body background" },
+        "subtle":   { "$type": "color", "$value": "{color.palette.peach.cream2}", "$description": "Alternate section rows, utility bar, footer, blog" },
+        "emphasis": { "$type": "color", "$value": "{color.palette.peach.cream3}", "$description": "High-emphasis bands (join section)" }
+      },
+      "border": {
+        "default": { "$type": "color", "$value": "{color.palette.peach.paperLine}", "$description": "Cards, inputs, dividers" },
+        "accent":  { "$type": "color", "$value": "{color.palette.peach.gold}",      "$description": "Decorative rules, card hover border" }
+      },
+      "text": {
+        "default":      { "$type": "color", "$value": "{color.palette.peach.ink}",          "$description": "Body copy" },
+        "muted":        { "$type": "color", "$value": "{color.palette.peach.muted}",        "$description": "Secondary/helper copy, captions" },
+        "heading":      { "$type": "color", "$value": "{color.palette.peach.heading}",      "$description": "h1–h4, logo name" },
+        "accent":       { "$type": "color", "$value": "{color.palette.peach.primaryDeep}",  "$description": "Eyebrow labels, text-links, drop-cap" },
+        "onSubtle":     { "$type": "color", "$value": "{color.palette.peach.onSubtle}",     "$description": "Body text on cream-3 backgrounds" },
+        "onSubtleMuted":{ "$type": "color", "$value": "{color.palette.peach.onSubtleMuted}","$description": "Muted text on cream-3 backgrounds" }
+      },
+      "interactive": {
+        "primary":      { "$type": "color", "$value": "{color.palette.peach.primary}",     "$description": "Primary button fill" },
+        "primaryHover": { "$type": "color", "$value": "{color.palette.peach.primaryDeep}", "$description": "Primary button hover" },
+        "accent":       { "$type": "color", "$value": "{color.palette.peach.accent}",      "$description": "Accent (teal) button fill" },
+        "accentHover":  { "$type": "color", "$value": "{color.palette.peach.accentDeep}",  "$description": "Accent button hover" },
+        "ghost":        { "$type": "color", "$value": "{color.palette.peach.heading}",     "$description": "Ghost button text + border" }
+      },
+      "status": {
+        "error":      { "$type": "color", "$value": "#C14B6C", "$description": "Form validation error text" },
+        "errorBorder":{ "$type": "color", "$value": "#D9607F", "$description": "Form input invalid border" }
+      },
+      "white": { "$type": "color", "$value": "#FFFFFF" }
+    }
+  },
+
+  "typography": {
+    "fontFamily": {
+      "serif":    { "$type": "fontFamily", "$value": ["Cormorant Garamond", "Georgia", "serif"],   "$description": "Headings, hero h1, pull-quotes, book titles, sign-off, drop-cap" },
+      "display":  { "$type": "fontFamily", "$value": ["Marcellus", "serif"],                       "$description": "Eyebrows, small-caps labels, nav headings, footer h4, stat labels" },
+      "sans":     { "$type": "fontFamily", "$value": ["Mukta", "system-ui", "sans-serif"],         "$description": "Body copy, buttons, nav links, inputs" }
+    },
+
+    "fontWeight": {
+      "light":      { "$type": "fontWeight", "$value": 300 },
+      "regular":    { "$type": "fontWeight", "$value": 400 },
+      "medium":     { "$type": "fontWeight", "$value": 500 },
+      "semibold":   { "$type": "fontWeight", "$value": 600 },
+      "bold":       { "$type": "fontWeight", "$value": 700 }
+    },
+
+    "fontSize": {
+      "$description": "Fixed sizes. Fluid/responsive sizes are in typography.fluidSize.",
+      "micro":    { "$type": "dimension", "$value": "9.5px",  "$description": "Brand tagline ('Serve · Love')" },
+      "label":    { "$type": "dimension", "$value": "10.5px", "$description": "Image plate caption" },
+      "tag":      { "$type": "dimension", "$value": "11px",   "$description": "Post tag, post-more link" },
+      "tagAlt":   { "$type": "dimension", "$value": "11.5px", "$description": "Stat label, post-more link alt" },
+      "eyebrow":  { "$type": "dimension", "$value": "13px",   "$description": "Section eyebrow, utility bar" },
+      "fine":     { "$type": "dimension", "$value": "12px",   "$description": "Dropdown small, footer h4, event month, appBtn label" },
+      "fineAlt":  { "$type": "dimension", "$value": "12.5px", "$description": "Dropdown item secondary, text-link" },
+      "body":     { "$type": "dimension", "$value": "18px",   "$description": "Base body copy" },
+      "bodySmall":{ "$type": "dimension", "$value": "15.5px", "$description": "Post excerpt" },
+      "bodyAlt":  { "$type": "dimension", "$value": "14.5px", "$description": "Footer links, event meta, footer about" },
+      "btn":      { "$type": "dimension", "$value": "15px",   "$description": "Button label, nav link" },
+      "dropdownItem":{ "$type": "dimension", "$value": "15.5px","$description": "Dropdown item title" },
+      "navBrand": { "$type": "dimension", "$value": "25px",   "$description": "Brand wordmark" },
+      "brandMark":{ "$type": "dimension", "$value": "26px",   "$description": "Logo glyph inside mark circle" },
+      "drawerNav":{ "$type": "dimension", "$value": "24px",   "$description": "Mobile drawer top-level items" },
+      "drawerSub":{ "$type": "dimension", "$value": "16px",   "$description": "Mobile drawer sub-items" },
+      "sign":     { "$type": "dimension", "$value": "22px",   "$description": "Italic sign-off ('— Bhakta Bandhav')" },
+      "postCard": { "$type": "dimension", "$value": "26px",   "$description": "Blog card h3" },
+      "eventDay": { "$type": "dimension", "$value": "44px",   "$description": "Event date day numeral" },
+      "successH3":{ "$type": "dimension", "$value": "30px",   "$description": "Join success message heading" },
+      "appBtnLg": { "$type": "dimension", "$value": "18px",   "$description": "Footer app-store button platform name" }
+    },
+
+    "fluidSize": {
+      "$description": "Responsive sizes expressed as CSS clamp(min, fluid, max).",
+      "heroH1":   { "$type": "string", "$value": "clamp(40px, 5.2vw, 74px)",  "$description": "Hero headline" },
+      "heroSub":  { "$type": "string", "$value": "clamp(17px, 1.5vw, 20px)",  "$description": "Hero subheading paragraph" },
+      "lede":     { "$type": "string", "$value": "clamp(20px, 2.2vw, 26px)",  "$description": "Lede / pull-quote text" },
+      "h2Standard":{ "$type": "string", "$value": "clamp(32px, 4vw, 54px)",   "$description": "Section h2 (events, publications, blog)" },
+      "h2About":  { "$type": "string", "$value": "clamp(34px, 4.2vw, 58px)",  "$description": "About section h2" },
+      "h2Join":   { "$type": "string", "$value": "clamp(34px, 4.4vw, 60px)",  "$description": "Join section h2" },
+      "statNum":  { "$type": "string", "$value": "clamp(40px, 5vw, 62px)",    "$description": "Publications stat numerals" },
+      "bookTitle":{ "$type": "string", "$value": "clamp(13px, 1.4vw, 18px)",  "$description": "Book spine / cover title" },
+      "eventH3":  { "$type": "string", "$value": "clamp(22px, 2.4vw, 30px)",  "$description": "Event row title" },
+      "sectionPad":{ "$type": "string", "$value": "clamp(64px, 9vw, 132px)",  "$description": "Top/bottom padding on .section" },
+      "gridGap":  { "$type": "string", "$value": "clamp(40px, 6vw, 96px)",    "$description": "Main 2-col grid gap" },
+      "eventGap": { "$type": "string", "$value": "clamp(20px, 4vw, 56px)",    "$description": "Event row column gap" },
+      "footerGap":{ "$type": "string", "$value": "clamp(28px, 4vw, 56px)",    "$description": "Footer grid column gap" }
+    },
+
+    "lineHeight": {
+      "tight":    { "$type": "number", "$value": 1.06, "$description": "Hero h1" },
+      "heading":  { "$type": "number", "$value": 1.08, "$description": "All headings default" },
+      "headingMid":{ "$type": "number","$value": 1.2,  "$description": "Book title" },
+      "verse":    { "$type": "number", "$value": 1.3,  "$description": "Scripture verse" },
+      "lede":     { "$type": "number", "$value": 1.5,  "$description": "Lede / pull-quote" },
+      "sub":      { "$type": "number", "$value": 1.6,  "$description": "Hero sub, post excerpt" },
+      "body":     { "$type": "number", "$value": 1.7,  "$description": "Base body copy, footer about" },
+      "dropdown": { "$type": "number", "$value": 1.4,  "$description": "Dropdown item secondary text" },
+      "brand":    { "$type": "number", "$value": 1,    "$description": "Brand name stack" },
+      "stat":     { "$type": "number", "$value": 1,    "$description": "Stat numeral" }
+    },
+
+    "letterSpacing": {
+      "tight":    { "$type": "dimension", "$value": "-0.005em", "$description": "Hero h1" },
+      "heading":  { "$type": "dimension", "$value": "0.002em",  "$description": "All headings default" },
+      "brandName":{ "$type": "dimension", "$value": "0.01em",   "$description": "Brand wordmark" },
+      "tagline":  { "$type": "dimension", "$value": "0.36em",   "$description": "Brand sub-tagline (Serve · Love)" },
+      "eyebrow":  { "$type": "dimension", "$value": "0.34em",   "$description": "Section eyebrow" },
+      "textLink": { "$type": "dimension", "$value": "0.22em",   "$description": "Text-link label" },
+      "label":    { "$type": "dimension", "$value": "0.2em",    "$description": "Post tag, image plate label, footer h4" },
+      "statLabel":{ "$type": "dimension", "$value": "0.16em",   "$description": "Stat label" },
+      "sanskrit": { "$type": "dimension", "$value": "0.16em",   "$description": "Sanskrit utility-bar text" },
+      "eventMonth":{ "$type": "dimension","$value": "0.18em",   "$description": "Event month abbreviation" },
+      "btn":      { "$type": "dimension", "$value": "0.04em",   "$description": "Button label" },
+      "navLink":  { "$type": "dimension", "$value": "0.01em",   "$description": "Nav top-level link" },
+      "utility":  { "$type": "dimension", "$value": "0.02em",   "$description": "Utility bar text" },
+      "appBtnSm": { "$type": "dimension", "$value": "0.1em",    "$description": "App-button 'Download on the' label" }
+    }
+  },
+
+  "spacing": {
+    "$description": "Fixed spacing values used across the layout.",
+    "1":   { "$type": "dimension", "$value": "4px" },
+    "2":   { "$type": "dimension", "$value": "6px" },
+    "3":   { "$type": "dimension", "$value": "8px" },
+    "4":   { "$type": "dimension", "$value": "12px" },
+    "5":   { "$type": "dimension", "$value": "14px" },
+    "6":   { "$type": "dimension", "$value": "16px" },
+    "7":   { "$type": "dimension", "$value": "18px" },
+    "8":   { "$type": "dimension", "$value": "20px" },
+    "9":   { "$type": "dimension", "$value": "22px" },
+    "10":  { "$type": "dimension", "$value": "24px" },
+    "12":  { "$type": "dimension", "$value": "26px" },
+    "14":  { "$type": "dimension", "$value": "28px" },
+    "16":  { "$type": "dimension", "$value": "30px" },
+    "20":  { "$type": "dimension", "$value": "36px" },
+    "24":  { "$type": "dimension", "$value": "50px" },
+    "28":  { "$type": "dimension", "$value": "56px" },
+    "32":  { "$type": "dimension", "$value": "60px" },
+    "36":  { "$type": "dimension", "$value": "64px" },
+    "40":  { "$type": "dimension", "$value": "80px" },
+
+    "layout": {
+      "wrapMax":       { "$type": "dimension", "$value": "1240px", "$description": "Max content width (.wrap)" },
+      "wrapNarrowMax": { "$type": "dimension", "$value": "940px",  "$description": "Narrow content width (.wrap-narrow)" },
+      "wrapInset":     { "$type": "string",    "$value": "92vw",   "$description": "Viewport-relative inset for .wrap" },
+      "wrapNarrowInset":{ "$type": "string",   "$value": "90vw",   "$description": "Viewport-relative inset for .wrap-narrow" },
+      "navHeight":     { "$type": "dimension", "$value": "78px",   "$description": "Sticky nav bar height" },
+      "utilityHeight": { "$type": "dimension", "$value": "38px",   "$description": "Top utility bar height" },
+      "heroMinH":      { "$type": "dimension", "$value": "880px",  "$description": "Max cap on hero min-height (paired with 94vh)" },
+      "drawerWidth":   { "$type": "dimension", "$value": "380px",  "$description": "Mobile drawer max width" },
+      "drawerInset":   { "$type": "string",    "$value": "86vw",   "$description": "Viewport-relative cap on drawer width" },
+      "footerTopPad":  { "$type": "dimension", "$value": "80px",   "$description": "Footer top padding" }
+    },
+
+    "button": {
+      "paddingY":  { "$type": "dimension", "$value": "13px" },
+      "paddingX":  { "$type": "dimension", "$value": "26px" },
+      "paddingYLg":{ "$type": "dimension", "$value": "16px", "$description": "Join form submit button" },
+      "gap":       { "$type": "dimension", "$value": "0.6em" }
+    },
+
+    "input": {
+      "paddingY": { "$type": "dimension", "$value": "16px" },
+      "paddingX": { "$type": "dimension", "$value": "18px" }
+    },
+
+    "eyebrow": {
+      "gap":          { "$type": "dimension", "$value": "0.85em" },
+      "ruleWidth":    { "$type": "dimension", "$value": "34px" },
+      "marginBottom": { "$type": "dimension", "$value": "22px" }
+    }
+  },
+
+  "radius": {
+    "none":     { "$type": "dimension", "$value": "0" },
+    "sharp":    { "$type": "dimension", "$value": "2px",  "$description": "Buttons" },
+    "input":    { "$type": "dimension", "$value": "3px",  "$description": "Input fields, nav links" },
+    "card":     { "$type": "dimension", "$value": "4px",  "$description": "Image plates, about plate" },
+    "dropdown": { "$type": "dimension", "$value": "6px",  "$description": "Dropdown panel, blog card, success card, app button" },
+    "pill":     { "$type": "dimension", "$value": "50%",  "$description": "Circles: brand mark, social icons, carousel arrows, dots" }
+  },
+
+  "shadow": {
+    "btn": {
+      "primary": { "$type": "shadow", "$value": "0 8px 24px -10px", "$description": "Primary button — coloured with color-mix at 70% saffron" },
+      "accent":  { "$type": "shadow", "$value": "0 8px 24px -10px", "$description": "Accent button — coloured with color-mix at 65% accent" }
+    },
+    "nav":         { "$type": "shadow", "$value": "0 10px 30px -22px rgba(40,16,12,0.5)", "$description": "Nav on scroll" },
+    "brandMark":   { "$type": "shadow", "$value": "0 6px 16px -8px {color.semantic.interactive.primary}", "$description": "Logo circle glow" },
+    "dropdown":    { "$type": "shadow", "$value": "0 26px 50px -24px rgba(40,16,12,0.55)" },
+    "drawer":      { "$type": "shadow", "$value": "-30px 0 60px -30px rgba(0,0,0,0.5)" },
+    "plateMain":   { "$type": "shadow", "$value": "0 40px 80px -50px rgba(40,16,12,0.7)",  "$description": "About main image plate" },
+    "plateFloat":  { "$type": "shadow", "$value": "0 30px 60px -34px rgba(40,16,12,0.6)",  "$description": "About floating image plate" },
+    "bookFan":     { "$type": "shadow", "$value": "0 30px 60px -32px rgba(150,32,101,0.45)","$description": "Book fan decoration" },
+    "postHover":   { "$type": "shadow", "$value": "0 36px 60px -40px rgba(40,16,12,0.6)",  "$description": "Blog card on hover" },
+    "successCard": { "$type": "shadow", "$value": "0 30px 60px -40px rgba(150,32,101,0.4)","$description": "Join success state card" }
+  },
+
+  "motion": {
+    "easing": {
+      "standard":   { "$type": "cubicBezier", "$value": [0.2, 0.7, 0.3, 1],  "$description": "Default — used for buttons, reveals, book fan" },
+      "drawer":     { "$type": "cubicBezier", "$value": [0.4, 0,   0.1, 1],  "$description": "Slide-in/out panel (mobile drawer)" },
+      "linear":     { "$type": "cubicBezier", "$value": [0,   0,   1,   1],  "$description": "Slow Ken-Burns pan on hero slides" },
+      "ease":       { "$type": "string",      "$value": "ease",               "$description": "Hero slide opacity" }
+    },
+    "duration": {
+      "instant":  { "$type": "duration", "$value": "0.18s", "$description": "Dropdown hover background" },
+      "fast":     { "$type": "duration", "$value": "0.2s",  "$description": "Link colour, icon hover" },
+      "base":     { "$type": "duration", "$value": "0.25s", "$description": "Buttons, inputs, most interactions" },
+      "moderate": { "$type": "duration", "$value": "0.3s",  "$description": "Chevron rotate, text-link gap, dots, nav underline" },
+      "nav":      { "$type": "duration", "$value": "0.35s", "$description": "Nav background, post card lift" },
+      "drawer":   { "$type": "duration", "$value": "0.4s",  "$description": "Mobile drawer slide" },
+      "book":     { "$type": "duration", "$value": "0.5s",  "$description": "Book fan hover" },
+      "reveal":   { "$type": "duration", "$value": "0.9s",  "$description": "Scroll-reveal fade + rise" },
+      "heroFade": { "$type": "duration", "$value": "1.4s",  "$description": "Hero slide opacity cross-fade" },
+      "heroPan":  { "$type": "duration", "$value": "8s",    "$description": "Hero active-slide Ken-Burns pan" },
+      "heroInterval":{ "$type": "duration","$value": "6.5s", "$description": "Auto-advance interval between slides" }
+    },
+    "delay": {
+      "d1": { "$type": "duration", "$value": "0.1s", "$description": "Scroll-reveal stagger step 1" },
+      "d2": { "$type": "duration", "$value": "0.2s", "$description": "Scroll-reveal stagger step 2" },
+      "d3": { "$type": "duration", "$value": "0.3s", "$description": "Scroll-reveal stagger step 3" }
+    }
+  },
+
+  "breakpoint": {
+    "$description": "max-width breakpoints used in media queries.",
+    "xs":     { "$type": "dimension", "$value": "560px",  "$description": "Footer single-column" },
+    "mobile": { "$type": "dimension", "$value": "700px",  "$description": "Hero controls / arrows hide" },
+    "sm":     { "$type": "dimension", "$value": "760px",  "$description": "Event row stacks" },
+    "md":     { "$type": "dimension", "$value": "860px",  "$description": "Utility bar sanskrit hides, join grid stacks" },
+    "grid":   { "$type": "dimension", "$value": "900px",  "$description": "About / pubs 2-col → 1-col, blog 3-col → 1-col" },
+    "footer": { "$type": "dimension", "$value": "980px",  "$description": "Footer 4-col → 2-col" },
+    "nav":    { "$type": "dimension", "$value": "1080px", "$description": "Nav collapses to hamburger" }
+  },
+
+  "zIndex": {
+    "nav":     { "$type": "number", "$value": 200, "$description": "Sticky navigation bar" },
+    "backdrop":{ "$type": "number", "$value": 300, "$description": "Mobile drawer backdrop overlay" },
+    "drawer":  { "$type": "number", "$value": 310, "$description": "Mobile drawer panel" }
+  }
+}
