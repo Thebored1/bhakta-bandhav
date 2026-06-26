@@ -21,6 +21,9 @@ dev-*.txt
 # planning/reference docs (not part of deployment)
 *.pdf
 
+# raw image sources (converted into public/images/*.webp via scripts/convert-hero.mjs)
+/images/
+
 # OS files
 .DS_Store
 Thumbs.db

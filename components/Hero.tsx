@@ -8,23 +8,23 @@ import type { PlateTint } from "@/lib/data";
 const SLIDES: { tint: PlateTint; label: string; src: string }[] = [
   {
     tint: "peach",
-    label: "Sri Radhe Kunj temple at dawn, Vrindavan",
-    src: "https://images.unsplash.com/photo-1733805569204-41768c7d8c0f?auto=format&fit=crop&w=1600&q=80",
+    label: "A devoted sadhu absorbed in meditation beneath a banyan tree",
+    src: "/images/hero-1.webp",
   },
   {
     tint: "blossom",
-    label: "Pilgrims gathered at the sacred ghats",
-    src: "https://images.unsplash.com/photo-1565354785692-9e7523e5a87b?auto=format&fit=crop&w=1600&q=80",
+    label: "A revered guru in devotional worship with Tulasi and marigold offerings",
+    src: "/images/hero-2.webp",
   },
   {
     tint: "gold",
-    label: "Marigold offerings at the temple",
-    src: "https://images.unsplash.com/photo-1699764681875-dd04ce36b1c3?auto=format&fit=crop&w=1600&q=80",
+    label: "Sri Krishna playing the flute, adorned with garlands",
+    src: "/images/hero-3.webp",
   },
   {
     tint: "mint",
-    label: "The sacred ghats of Varanasi at dawn",
-    src: "https://images.unsplash.com/photo-1571536802807-30451e3955d8?auto=format&fit=crop&w=1600&q=80",
+    label: "Sri Krishna enshrined on a golden altar amid flower offerings",
+    src: "/images/hero-4.webp",
   },
 ];
 
