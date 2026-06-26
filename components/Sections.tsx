@@ -53,16 +53,94 @@ export function About() {
 }
 
 
-// Bhakta Bandhav / Srila B.V. Narayana Gosvami titles. Add `src` (a path under
-// /images/books/*.webp) to any entry to show the real cover instead of the styled spine.
-const BOOKS: { title: string; spine: "saffron" | "maroon" | "accent"; src?: string }[] = [
-  { title: "Jaiva Dharma", spine: "maroon" },
-  { title: "The Nectar of Govinda-līlā", spine: "saffron" },
-  { title: "Śrī Śikṣāṣṭaka", spine: "accent" },
-  { title: "Beyond Nirvāṇa", spine: "saffron" },
-  { title: "Bhakti-rasāyana", spine: "accent" },
-  { title: "Pinnacle of Devotion", spine: "maroon" },
+// Bhakta Bandhav / Srila B.V. Narayana Gosvami titles. Each cover is drawn with a
+// devotional motif chosen for the book's theme. Add `src` (a path under
+// /images/books/*.webp) to any entry to show a real cover photo instead.
+type BookMotif = "lotus" | "mandala" | "om" | "feather" | "tulasi" | "flute";
+const BOOKS: { title: string; spine: "saffron" | "maroon" | "accent"; motif: BookMotif; src?: string }[] = [
+  { title: "Jaiva Dharma", spine: "maroon", motif: "lotus" },
+  { title: "The Nectar of Govinda-līlā", spine: "saffron", motif: "flute" },
+  { title: "Śrī Śikṣāṣṭaka", spine: "accent", motif: "om" },
+  { title: "Beyond Nirvāṇa", spine: "saffron", motif: "mandala" },
+  { title: "Bhakti-rasāyana", spine: "accent", motif: "tulasi" },
+  { title: "Pinnacle of Devotion", spine: "maroon", motif: "feather" },
 ];
+
+function BookArt({ motif }: { motif: BookMotif }) {
+  const s = {
+    viewBox: "0 0 100 100",
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: 2,
+    strokeLinecap: "round" as const,
+    strokeLinejoin: "round" as const,
+  };
+  switch (motif) {
+    case "lotus":
+      return (
+        <svg {...s}>
+          <path d="M50 26C57 39 57 52 50 63 43 52 43 39 50 26Z" />
+          <path d="M50 63C44 51 35 45 26 47 29 58 39 64 50 63Z" />
+          <path d="M50 63C56 51 65 45 74 47 71 58 61 64 50 63Z" />
+          <path d="M50 63C43 56 32 55 23 60 28 68 40 70 50 63Z" />
+          <path d="M50 63C57 56 68 55 77 60 72 68 60 70 50 63Z" />
+          <path d="M22 67C34 73 66 73 78 67" />
+        </svg>
+      );
+    case "mandala":
+      return (
+        <svg {...s}>
+          <circle cx="50" cy="50" r="7" />
+          <circle cx="50" cy="50" r="16" />
+          {[0, 45, 90, 135, 180, 225, 270, 315].map((a) => (
+            <path key={a} d="M50 34C54 27 54 21 50 16 46 21 46 27 50 34Z" transform={`rotate(${a} 50 50)`} />
+          ))}
+          <circle cx="50" cy="50" r="36" strokeDasharray="1.5 4" />
+        </svg>
+      );
+    case "om":
+      return (
+        <svg viewBox="0 0 100 100">
+          <text x="50" y="73" textAnchor="middle" fontSize="66" fill="currentColor" fontFamily="var(--font-cormorant), serif">ॐ</text>
+        </svg>
+      );
+    case "feather":
+      return (
+        <svg {...s}>
+          <path d="M50 88C50 70 49 52 50 40" />
+          <ellipse cx="50" cy="34" rx="15" ry="21" />
+          <ellipse cx="50" cy="36" rx="8" ry="12" />
+          <path d="M50 44C46 40 46 32 50 28 54 32 54 40 50 44Z" />
+          <path d="M50 56 36 50M50 62 33 58M50 56 64 50M50 62 67 58" />
+        </svg>
+      );
+    case "tulasi":
+      return (
+        <svg {...s}>
+          <path d="M50 86C50 66 50 44 50 24" />
+          <path d="M50 32C41 28 33 32 31 41 40 43 47 40 50 32Z" />
+          <path d="M50 32C59 28 67 32 69 41 60 43 53 40 50 32Z" />
+          <path d="M50 50C42 47 34 51 33 60 41 61 47 57 50 50Z" />
+          <path d="M50 50C58 47 66 51 67 60 59 61 53 57 50 50Z" />
+          <path d="M50 66C44 64 38 67 37 74 44 75 49 71 50 66Z" />
+          <path d="M50 66C56 64 62 67 63 74 56 75 51 71 50 66Z" />
+        </svg>
+      );
+    case "flute":
+      return (
+        <svg {...s}>
+          <line x1="20" y1="66" x2="76" y2="36" />
+          <line x1="74" y1="34" x2="78" y2="38" />
+          <circle cx="34" cy="60" r="1.8" fill="currentColor" stroke="none" />
+          <circle cx="42" cy="56" r="1.8" fill="currentColor" stroke="none" />
+          <circle cx="50" cy="51" r="1.8" fill="currentColor" stroke="none" />
+          <circle cx="58" cy="47" r="1.8" fill="currentColor" stroke="none" />
+          <path d="M66 22V34" />
+          <ellipse cx="63" cy="34" rx="3.4" ry="2.6" fill="currentColor" stroke="none" />
+        </svg>
+      );
+  }
+}
 
 export function Publications() {
   const stats = [
@@ -79,7 +157,12 @@ export function Publications() {
               {b.src ? (
                 <Image src={b.src} alt={`${b.title} — book cover`} fill sizes="(max-width: 900px) 30vw, 16vw" style={{ objectFit: "cover" }} />
               ) : (
-                <span className="b-title">{b.title}</span>
+                <>
+                  <span className="cover-frame" aria-hidden="true" />
+                  <span className="cover-art" aria-hidden="true"><BookArt motif={b.motif} /></span>
+                  <span className="cover-rule" aria-hidden="true" />
+                  <span className="b-title">{b.title}</span>
+                </>
               )}
             </div>
           ))}
