@@ -7,23 +7,23 @@ import type { PlateTint } from "@/lib/data";
 
 const SLIDES: { tint: PlateTint; label: string; src: string }[] = [
   {
-    tint: "peach",
-    label: "A devoted sadhu absorbed in meditation beneath a banyan tree",
-    src: "/images/hero-1.webp",
-  },
-  {
-    tint: "blossom",
-    label: "A revered guru in devotional worship with Tulasi and marigold offerings",
-    src: "/images/hero-2.webp",
-  },
-  {
     tint: "gold",
     label: "Sri Krishna playing the flute, adorned with garlands",
-    src: "/images/hero-3.webp",
+    src: "/images/hero-1.webp",
   },
   {
     tint: "mint",
     label: "Sri Krishna enshrined on a golden altar amid flower offerings",
+    src: "/images/hero-2.webp",
+  },
+  {
+    tint: "blossom",
+    label: "Srimati Radharani adorned with flowers and garlands",
+    src: "/images/hero-3.webp",
+  },
+  {
+    tint: "peach",
+    label: "A garlanded murti of a revered acharya amid blossoms",
     src: "/images/hero-4.webp",
   },
 ];
