@@ -56,7 +56,7 @@ function MobileDrawer({
             <span className="mark">ব</span>
             <span className="name">
               <b>Bhakta Bandhav</b>
-              <span>Serve · Love</span>
+              <span>Family of Lord Chaitanya</span>
             </span>
           </span>
           <button className="drawer-close" aria-label="Close menu" onClick={onClose}>
@@ -140,7 +140,7 @@ export default function Nav() {
             <span className="mark">ব</span>
             <span className="name">
               <b>Bhakta Bandhav</b>
-              <span>Serve · Love</span>
+              <span>Family of Lord Chaitanya</span>
             </span>
           </a>
 

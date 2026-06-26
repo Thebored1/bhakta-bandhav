@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import Icon from "./Icon";
 import Plate from "./Plate";
 import { getPosts, getEvents } from "@/lib/supabase/queries";
@@ -52,6 +53,17 @@ export function About() {
 }
 
 
+// Bhakta Bandhav / Srila B.V. Narayana Gosvami titles. Add `src` (a path under
+// /images/books/*.webp) to any entry to show the real cover instead of the styled spine.
+const BOOKS: { title: string; spine: "saffron" | "maroon" | "accent"; src?: string }[] = [
+  { title: "Jaiva Dharma", spine: "maroon" },
+  { title: "The Nectar of Govinda-līlā", spine: "saffron" },
+  { title: "Śrī Śikṣāṣṭaka", spine: "accent" },
+  { title: "Beyond Nirvāṇa", spine: "saffron" },
+  { title: "Bhakti-rasāyana", spine: "accent" },
+  { title: "Pinnacle of Devotion", spine: "maroon" },
+];
+
 export function Publications() {
   const stats = [
     { num: "120", lbl: "Books Published" },
@@ -61,16 +73,16 @@ export function Publications() {
   return (
     <section className="section pubs" id="publications">
       <div className="wrap grid">
-        <div className="books reveal">
-          <div className="book b1">
-            <span className="b-title">Jaiva Dharma</span>
-          </div>
-          <div className="book b2">
-            <span className="b-title">The Nectar of Govinda-līlā</span>
-          </div>
-          <div className="book b3">
-            <span className="b-title">Śikṣāṣṭaka</span>
-          </div>
+        <div className="books-collage reveal" aria-label="A selection of Bhakta Bandhav publications">
+          {BOOKS.map((b) => (
+            <div className={`book-cover spine-${b.spine}`} key={b.title}>
+              {b.src ? (
+                <Image src={b.src} alt={`${b.title} — book cover`} fill sizes="(max-width: 900px) 30vw, 16vw" style={{ objectFit: "cover" }} />
+              ) : (
+                <span className="b-title">{b.title}</span>
+              )}
+            </div>
+          ))}
         </div>
         <div>
           <span className="eyebrow reveal">Books &amp; Publications</span>
