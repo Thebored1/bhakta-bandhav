@@ -36,11 +36,6 @@ const SLIDES: { tint: PlateTint; label: string; src: string }[] = [
     label: "A garlanded murti of a revered acharya",
     src: "/images/hero-6.webp",
   },
-  {
-    tint: "peach",
-    label: "A garlanded murti of Srila Swami Prabhupada",
-    src: "/images/hero-7.webp",
-  },
 ];
 
 export default function Hero() {

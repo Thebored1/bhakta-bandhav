@@ -15,7 +15,6 @@ const MAP = [
   ["WhatsApp Image 2026-06-29 at 19.24.18.jpeg", "hero-4.webp"],        // Radharani close-up
   ["WhatsApp Image 2026-06-29 at 19.24.18 (1).jpeg", "hero-5.webp"],    // Deity close-up
   ["WhatsApp Image 2026-06-25 at 23.53.48.jpeg", "hero-6.webp"],        // acharya murti (cropped)
-  ["WhatsApp Image 2026-06-29 at 19.34.05.jpeg", "hero-7.webp"],        // Srila Prabhupada murti
   ["WhatsApp Image 2026-06-29 at 19.20.28.jpeg", "narayana-gosvami.webp"], // Narayana Gosvami Maharaja (blog)
 ];
 
