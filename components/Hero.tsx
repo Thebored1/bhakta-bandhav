@@ -7,24 +7,39 @@ import type { PlateTint } from "@/lib/data";
 
 const SLIDES: { tint: PlateTint; label: string; src: string }[] = [
   {
-    tint: "gold",
-    label: "Sri Krishna playing the flute, adorned with garlands",
+    tint: "blossom",
+    label: "Srimati Radharani adorned with flowers and garlands",
     src: "/images/hero-1.webp",
   },
   {
-    tint: "mint",
-    label: "Sri Krishna enshrined on a golden altar amid flower offerings",
+    tint: "rose",
+    label: "Sri Krishna playing the flute amid flower offerings",
     src: "/images/hero-2.webp",
   },
   {
-    tint: "blossom",
-    label: "Srimati Radharani adorned with flowers and garlands",
+    tint: "gold",
+    label: "Sri Sri Radha-Krishna enthroned amid marigold offerings",
     src: "/images/hero-3.webp",
   },
   {
     tint: "peach",
-    label: "A garlanded murti of a revered acharya amid blossoms",
+    label: "Srimati Radharani, beautifully adorned",
     src: "/images/hero-4.webp",
+  },
+  {
+    tint: "mint",
+    label: "The Divine Couple in resplendent worship",
+    src: "/images/hero-5.webp",
+  },
+  {
+    tint: "lavender",
+    label: "A garlanded murti of a revered acharya",
+    src: "/images/hero-6.webp",
+  },
+  {
+    tint: "peach",
+    label: "A garlanded murti of Srila Swami Prabhupada",
+    src: "/images/hero-7.webp",
   },
 ];
 

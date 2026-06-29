@@ -45,7 +45,7 @@ values
     'The Legacy of Srila Narayana Gosvami',
     'A reflection on how Bhakta Bandhav Srila Gurudeva spread the path of pure love across the world through tireless travel and teaching.',
     'peach',
-    'https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?auto=format&fit=crop&w=800&q=80',
+    '/images/narayana-gosvami.webp',
     '<p>A reflection on how Bhakta Bandhav Srila Gurudeva spread the path of pure love across the world through tireless travel and teaching.</p><p>Full article coming soon.</p>',
     'the-legacy-of-srila-narayana-gosvami',
     '2026-02-12T00:00:00Z'
