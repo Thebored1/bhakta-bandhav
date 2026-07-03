@@ -2,20 +2,29 @@ import Link from "next/link";
 import Image from "next/image";
 import Icon from "./Icon";
 import Plate from "./Plate";
+import FestivalGallery from "./FestivalGallery";
 import { getPosts, getEvents } from "@/lib/supabase/queries";
 
 export function About() {
   return (
     <section className="section about" id="about">
-      <div className="altar-band reveal">
-        <Image
-          src="/images/radha-ramana-altar.webp"
-          alt="The altar of Sri Sri Radha Ramana Jiu with the gopis and manjaris, and the murtis of Srila Gurudeva and Srila Prabhupada"
-          fill
-          sizes="100vw"
-          style={{ objectFit: "cover" }}
-        />
-        <span className="altar-band-cap">Sri Sri Radha Ramana Jiu — the heart of our family&rsquo;s worship</span>
+      <div className="altar-feature reveal">
+        <span className="eyebrow">Darshana</span>
+        <p className="altar-kicker">Sri Sri Radha Ramana Jiu</p>
+        <div className="altar-frame">
+          <Image
+            src="/images/radha-ramana-altar.webp"
+            alt="The altar of Sri Sri Radha Ramana Jiu with the gopis and manjaris, and the murtis of Srila Gurudeva and Srila Prabhupada"
+            width={1024}
+            height={474}
+            sizes="(max-width: 1160px) 94vw, 1160px"
+            style={{ width: "100%", height: "auto", display: "block" }}
+          />
+        </div>
+        <p className="altar-cap">
+          Sri Radha Ramana with the sakhis and manjaris, attended by our beloved Srila Gurudeva and
+          Srila Prabhupada — the heart of our family&rsquo;s worship.
+        </p>
       </div>
       <div className="wrap grid">
         <div>
@@ -230,13 +239,7 @@ export function Festivals() {
             </p>
           </div>
         </div>
-        <div className="fest-grid reveal d1">
-          {FEST_PHOTOS.map((p, i) => (
-            <div className="fest-cell" key={i}>
-              <Image src={p.src} alt={p.alt} fill sizes="(max-width: 700px) 50vw, 33vw" style={{ objectFit: "cover" }} />
-            </div>
-          ))}
-        </div>
+        <FestivalGallery photos={FEST_PHOTOS} />
       </div>
     </section>
   );
