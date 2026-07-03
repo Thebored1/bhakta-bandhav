@@ -7,6 +7,16 @@ import { getPosts, getEvents } from "@/lib/supabase/queries";
 export function About() {
   return (
     <section className="section about" id="about">
+      <div className="altar-band reveal">
+        <Image
+          src="/images/radha-ramana-altar.webp"
+          alt="The altar of Sri Sri Radha Ramana Jiu with the gopis and manjaris, and the murtis of Srila Gurudeva and Srila Prabhupada"
+          fill
+          sizes="100vw"
+          style={{ objectFit: "cover" }}
+        />
+        <span className="altar-band-cap">Sri Sri Radha Ramana Jiu — the heart of our family&rsquo;s worship</span>
+      </div>
       <div className="wrap grid">
         <div>
           <span className="eyebrow reveal">Who Are We?</span>
@@ -34,15 +44,15 @@ export function About() {
           <Plate
             className="main"
             tint="blossom"
-            src="https://images.unsplash.com/photo-1582510003544-4d00b7f74220?auto=format&fit=crop&w=800&q=80"
-            alt="Temple courtyard in India"
+            src="/images/about-family.webp"
+            alt="Our devotee family gathered together at a waterfall"
             sizes="(max-width: 900px) 100vw, 45vw"
           />
           <Plate
             className="float"
             tint="mint"
-            src="https://images.unsplash.com/photo-1600177770140-c72d30918b1f?auto=format&fit=crop&w=600&q=80"
-            alt="Flower offering in Vrindavan"
+            src="/images/fest/fest-2.webp"
+            alt="Devotees absorbed in ecstatic kirtan under a canopy of flowers"
             mandala={false}
             sizes="20vw"
           />
@@ -57,13 +67,16 @@ export function About() {
 // devotional motif chosen for the book's theme. Add `src` (a path under
 // /images/books/*.webp) to any entry to show a real cover photo instead.
 type BookMotif = "lotus" | "mandala" | "om" | "feather" | "tulasi" | "flute";
-const BOOKS: { title: string; spine: "saffron" | "maroon" | "accent"; motif: BookMotif; src?: string }[] = [
-  { title: "Jaiva Dharma", spine: "maroon", motif: "lotus" },
-  { title: "The Nectar of Govinda-līlā", spine: "saffron", motif: "flute" },
-  { title: "Śrī Śikṣāṣṭaka", spine: "accent", motif: "om" },
-  { title: "Beyond Nirvāṇa", spine: "saffron", motif: "mandala" },
-  { title: "Bhakti-rasāyana", spine: "accent", motif: "tulasi" },
-  { title: "Pinnacle of Devotion", spine: "maroon", motif: "feather" },
+const BOOKS: { title: string; spine: "saffron" | "maroon" | "accent"; motif?: BookMotif; src?: string }[] = [
+  { title: "Sri Krsna Caitanya Mahaprabhu", spine: "maroon", src: "/images/books/caitanya-mahaprabhu.webp" },
+  { title: "Sri Guru Darsana", spine: "maroon", src: "/images/books/sri-guru-darsana.webp" },
+  { title: "Sri Vilapa-kusumanjali", spine: "accent", src: "/images/books/vilapa-kusumanjali.webp" },
+  { title: "Sri Prema-Bhakti-Candrika", spine: "saffron", src: "/images/books/prema-bhakti-candrika.webp" },
+  { title: "The Holy Dust of Vraja", spine: "accent", src: "/images/books/holy-dust-of-vraja.webp" },
+  { title: "Srila Gaura Kisora dasa Babaji", spine: "accent", src: "/images/books/gaura-kisora.webp" },
+  { title: "Sri Prarthana", spine: "saffron", src: "/images/books/sri-prarthana.webp" },
+  { title: "Srila Jagannatha dasa Babaji", spine: "accent", src: "/images/books/jagannatha-dasa-babaji.webp" },
+  { title: "Srila Bhaktisiddhanta Sarasvati Thakura", spine: "maroon", src: "/images/books/bhaktisiddhanta.webp" },
 ];
 
 function BookArt({ motif }: { motif: BookMotif }) {
@@ -153,13 +166,13 @@ export function Publications() {
       <div className="wrap grid">
         <div className="books-collage reveal" aria-label="A selection of Bhakta Bandhav publications">
           {BOOKS.map((b) => (
-            <div className={`book-cover spine-${b.spine}`} key={b.title}>
+            <div className={`book-cover spine-${b.spine}${b.src ? " has-photo" : ""}`} key={b.title}>
               {b.src ? (
                 <Image src={b.src} alt={`${b.title} — book cover`} fill sizes="(max-width: 900px) 30vw, 16vw" style={{ objectFit: "cover" }} />
               ) : (
                 <>
                   <span className="cover-frame" aria-hidden="true" />
-                  <span className="cover-art" aria-hidden="true"><BookArt motif={b.motif} /></span>
+                  <span className="cover-art" aria-hidden="true"><BookArt motif={b.motif ?? "lotus"} /></span>
                   <span className="cover-rule" aria-hidden="true" />
                   <span className="b-title">{b.title}</span>
                 </>
@@ -189,6 +202,40 @@ export function Publications() {
               <Icon name="arrow" size={16} />
             </span>
           </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+const FEST_PHOTOS = [
+  { src: "/images/fest/fest-1.webp", alt: "Devotees gathered for kirtan beneath a canopy of flowers" },
+  { src: "/images/fest/fest-2.webp", alt: "Ecstatic kirtan in the flower-decorated temple hall" },
+  { src: "/images/fest/fest-3.webp", alt: "Devotees dancing before the deities during the festival" },
+  { src: "/images/fest/fest-4.webp", alt: "The festival hall aglow with lamps and garlands" },
+  { src: "/images/fest/fest-5.webp", alt: "Hari-katha and kirtan with the assembled devotees" },
+];
+
+export function Festivals() {
+  return (
+    <section className="section fest" id="festivals">
+      <div className="wrap">
+        <div className="section-head">
+          <div className="sh-text">
+            <span className="eyebrow reveal">Festivals &amp; Kirtan</span>
+            <h2 className="reveal d1">Celebrating together in song and dance.</h2>
+            <p className="reveal d1">
+              Throughout the year our family gathers for festivals, kirtan, and hari-kathā — the
+              temple hall filling with flowers, lamps, and the sweet sound of the Holy Names.
+            </p>
+          </div>
+        </div>
+        <div className="fest-grid reveal d1">
+          {FEST_PHOTOS.map((p, i) => (
+            <div className="fest-cell" key={i}>
+              <Image src={p.src} alt={p.alt} fill sizes="(max-width: 700px) 50vw, 33vw" style={{ objectFit: "cover" }} />
+            </div>
+          ))}
         </div>
       </div>
     </section>

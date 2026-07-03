@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/Hero";
-import { About, Publications, Events, Blog } from "@/components/Sections";
+import { About, Publications, Festivals, Events, Blog } from "@/components/Sections";
 import Join from "@/components/Join";
 
 export const metadata: Metadata = {
@@ -28,6 +28,7 @@ export default function Home() {
       <Hero />
       <About />
       <Publications />
+      <Festivals />
       <Events />
       <Blog />
       <Join />

@@ -3,7 +3,7 @@ import React from "react";
 type IconName =
   | "chevron" | "arrow" | "arrowL" | "menu" | "close"
   | "pin" | "clock" | "check" | "yt" | "ig" | "fb" | "wa"
-  | "mail" | "lotus" | "heart";
+  | "mail" | "lotus" | "heart" | "globe" | "book";
 
 interface IconProps {
   name: IconName;
@@ -40,6 +40,8 @@ export default function Icon({ name, size = 18, style }: IconProps) {
     case "mail":    return <svg {...p}><rect x="3" y="5" width="18" height="14" rx="2.5" /><path d="m4 7 8 6 8-6" /></svg>;
     case "lotus":   return <svg {...p}><path d="M12 4c1.6 2 1.6 4.6 0 7-1.6-2.4-1.6-5 0-7Z" /><path d="M12 11c-2.6-.8-4.2 0-5.5 1.6 1.9 1.2 3.8 1.3 5.5.4" /><path d="M12 11c2.6-.8 4.2 0 5.5 1.6-1.9 1.2-3.8 1.3-5.5.4" /><path d="M4.5 13.5c1 3 4 5 7.5 5s6.5-2 7.5-5" /></svg>;
     case "heart":   return <svg {...p}><path d="M12 20s-6.5-4.3-8.5-8C2 9 3.5 6 6.5 6c1.8 0 3 .9 3.5 2 .5-1.1 1.7-2 3.5-2 3 0 4.5 3 3 6-2 3.7-8.5 8-8.5 8Z" /></svg>;
+    case "globe":   return <svg {...p}><circle cx="12" cy="12" r="9" /><path d="M3 12h18" /><path d="M12 3c2.6 2.5 3.9 5.7 3.9 9s-1.3 6.5-3.9 9c-2.6-2.5-3.9-5.7-3.9-9S9.4 5.5 12 3Z" /></svg>;
+    case "book":    return <svg {...p}><path d="M5 4.5A1.5 1.5 0 0 1 6.5 3H19v14H6.5A1.5 1.5 0 0 0 5 18.5V4.5Z" /><path d="M5 18.5A1.5 1.5 0 0 0 6.5 20H19v1" /><path d="M9 7.5h6M9 11h4" /></svg>;
     default: return null;
   }
 }

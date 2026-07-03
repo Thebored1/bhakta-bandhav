@@ -55,7 +55,7 @@ values
     'A Visit to New Braj Dham',
     'New Braj Dham in Badger, California is a sanctuary of devotion nestled in the hills, where community and practice meet.',
     'blossom',
-    'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=800&q=80',
+    '/images/new-braj-dham.webp',
     '<p>New Braj Dham in Badger, California is a sanctuary of devotion nestled in the hills, where community and practice meet.</p><p>Full article coming soon.</p>',
     'a-visit-to-new-braj-dham',
     '2026-02-19T00:00:00Z'
@@ -155,6 +155,22 @@ where not exists (
     and d = '03'
     and m = 'Aug'
     and place = 'Multiple Centers Worldwide'
+);
+
+insert into public.events (d, m, title, place, time, tag, description, created_at)
+select
+  '07',
+  'Nov',
+  'Kheturi Kirtan Festival 2026',
+  'See Eventbrite for details',
+  'Festival',
+  'Festival',
+  '<p>Join devotees for the Kheturi Kirtan Festival 2026 — a celebration of the Holy Names in the mood of Sri Chaitanya Mahaprabhu.</p><p><em>Dates and venue to be confirmed — please see Eventbrite for full details and tickets.</em></p><p><a class="btn btn-primary" href="https://kheturikirtan2026.eventbrite.com" target="_blank" rel="noopener noreferrer">Get tickets on Eventbrite</a></p>',
+  '2026-11-07T00:00:00Z'
+where not exists (
+  select 1
+  from public.events
+  where title = 'Kheturi Kirtan Festival 2026'
 );
 
 insert into public.events (d, m, title, place, time, tag, description, created_at)

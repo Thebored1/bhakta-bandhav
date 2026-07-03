@@ -30,6 +30,7 @@ export const SITE: {
       ],
     },
     { label: "Books",   items: null, href: "/books" },
+    { label: "Seva",    items: null, href: "/sevas" },
     { label: "Centers", items: null, href: "/centers" },
     {
       label: "Media",

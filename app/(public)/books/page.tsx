@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import PageHeader from "@/components/PageHeader";
 import Icon from "@/components/Icon";
 
@@ -88,9 +89,50 @@ export default function BooksPage() {
           <h2 className="reveal d1" style={{ fontSize: "clamp(28px, 3.5vw, 48px)", marginBottom: 12 }}>
             Shop our full catalogue
           </h2>
-          <p className="reveal d1" style={{ color: "var(--muted)", maxWidth: "52ch", marginBottom: 36 }}>
-            All titles are available through our Lulu storefront. Click below to browse and purchase.
+          <p className="reveal d1" style={{ color: "var(--muted)", maxWidth: "58ch", marginBottom: 28 }}>
+            Our Bhakta Bandhav titles are available worldwide through our Lulu storefront, and in
+            person at our bookstore in Sri Dhama Vrindavan — which also carries a wide variety of
+            devotional books, from the writings of our Guru-varga to the great acharyas of our line.
           </p>
+
+          <figure className="store-photo reveal d1">
+            <Image
+              src="/images/bookstore.webp"
+              alt="Inside the Bhakta Bandhav bookstore in Vrindavan, shelves stocked with devotional books beneath a hand-painted floral ceiling"
+              fill
+              sizes="(max-width: 1240px) 92vw, 1240px"
+              style={{ objectFit: "cover" }}
+            />
+            <figcaption>Our bookstore in Sri Dhama Vrindavan</figcaption>
+          </figure>
+
+          <div className="ship-grid reveal d1">
+            <div className="ship-card">
+              <div className="cc-icon"><Icon name="lotus" size={22} /></div>
+              <h4>Bhakta Bandhav titles</h4>
+              <p>
+                The teachings of Srila B.V. Narayana Gosvami and our Guru-varga — published with care
+                and available to devotees everywhere.
+              </p>
+            </div>
+            <div className="ship-card">
+              <div className="cc-icon"><Icon name="book" size={22} /></div>
+              <h4>A wider library in Vrindavan</h4>
+              <p>
+                Visiting Vrindavan? Our store stocks a broad selection of devotional literature
+                beyond our own publications — something for every stage of the path.
+              </p>
+            </div>
+            <div className="ship-card">
+              <div className="cc-icon"><Icon name="globe" size={22} /></div>
+              <h4>Shipped internationally</h4>
+              <p>
+                We ship worldwide. For international orders, shipping rates, or bulk enquiries,
+                contact Tyāgī Mahārāja and we&rsquo;ll gladly help.
+              </p>
+            </div>
+          </div>
+
           <a
             className="btn btn-primary reveal d1"
             href="https://www.lulu.com/spotlight/servelove"
