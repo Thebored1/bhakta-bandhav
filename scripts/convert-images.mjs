@@ -8,13 +8,12 @@ const TARGET = 200 * 1024; // ~200 KB
 const MAX_W = 1600;
 
 // Explicit source -> output mapping so slide order is deterministic.
+// Hero carousel uses the numbered images 1-4 in order; unnumbered files are skipped.
 const MAP = [
-  ["WhatsApp Image 2026-06-25 at 23.53.40.jpeg", "hero-1.webp"],        // Radharani in flowers (pair)
-  ["WhatsApp Image 2026-06-29 at 19.38.04.jpeg", "hero-2.webp"],        // Krishna with flute (pair)
-  ["WhatsApp Image 2026-06-29 at 19.24.27.jpeg", "hero-3.webp"],        // Radha-Krishna amid marigolds
-  ["WhatsApp Image 2026-06-29 at 19.24.18.jpeg", "hero-4.webp"],        // Radharani close-up
-  ["WhatsApp Image 2026-06-29 at 19.24.18 (1).jpeg", "hero-5.webp"],    // Deity close-up
-  ["WhatsApp Image 2026-06-25 at 23.53.48.jpeg", "hero-6.webp"],        // acharya murti (cropped)
+  ["1.jpeg", "hero-1.webp"],  // Srimati Radharani in flowers
+  ["2.jpeg", "hero-2.webp"],  // Sri Krishna with flute
+  ["3.jpeg", "hero-3.webp"],  // acharya murti (bust)
+  ["4.jpeg", "hero-4.webp"],  // Srila Prabhupada murti (seated)
   ["WhatsApp Image 2026-06-29 at 19.20.28.jpeg", "narayana-gosvami.webp"], // Narayana Gosvami Maharaja (blog)
 ];
 

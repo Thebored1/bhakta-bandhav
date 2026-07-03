@@ -17,24 +17,14 @@ const SLIDES: { tint: PlateTint; label: string; src: string }[] = [
     src: "/images/hero-2.webp",
   },
   {
-    tint: "gold",
-    label: "Sri Sri Radha-Krishna enthroned amid marigold offerings",
+    tint: "lavender",
+    label: "A garlanded murti of a revered acharya",
     src: "/images/hero-3.webp",
   },
   {
     tint: "peach",
-    label: "Srimati Radharani, beautifully adorned",
+    label: "A garlanded murti of Srila Swami Prabhupada",
     src: "/images/hero-4.webp",
-  },
-  {
-    tint: "mint",
-    label: "The Divine Couple in resplendent worship",
-    src: "/images/hero-5.webp",
-  },
-  {
-    tint: "lavender",
-    label: "A garlanded murti of a revered acharya",
-    src: "/images/hero-6.webp",
   },
 ];
 
