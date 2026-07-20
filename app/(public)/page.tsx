@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getPosts, getEvents } from "@/lib/supabase/queries";
 import HomeReveal from "@/components/HomeReveal";
 import HomeHero from "@/components/HomeHero";
+import HomeNav from "@/components/HomeNav";
 import "./home.css";
 
 export const metadata: Metadata = {
@@ -23,18 +24,6 @@ export const metadata: Metadata = {
       "A worldwide spiritual family of devotees in the line of Lord Chaitanya, sharing the path of pure Bhakti and the teachings of Srila B.V. Narayana Gosvami.",
   },
 };
-
-const NAV_LINKS = [
-  { label: "About ▾", href: "/about" },
-  { label: "Seva", href: "/sevas" },
-  { label: "Blog", href: "/blog" },
-  { label: "Books", href: "/books" },
-  { label: "Academy", href: "/academy" },
-  { label: "Media ▾", href: "/media" },
-  { label: "Centers", href: "/centers" },
-  { label: "Events", href: "/events" },
-  { label: "Calendar ▾", href: "/calendar" },
-];
 
 const BOOK_IMAGES = [
   "/images/home/book-1.webp",
@@ -135,28 +124,7 @@ export default async function Home() {
       </div>
 
       {/* main nav */}
-      <header className="bb-nav">
-        <Link href="/" className="bb-brand">
-          <img src="/images/home/logo.png" alt="Bhakta Bandhav" />
-          <span className="bb-brand-name">
-            <b>Bhakta Bandhav</b>
-            <span>FAMILY OF LORD CHAITANYA</span>
-          </span>
-        </Link>
-        <nav className="bb-navlinks">
-          {NAV_LINKS.map((l) => (
-            <Link key={l.label} href={l.href}>
-              {l.label}
-            </Link>
-          ))}
-          <Link href="#join" className="bb-btn-donate">
-            DONATE
-          </Link>
-        </nav>
-        <Link href="#join" className="bb-navmenu">
-          DONATE
-        </Link>
-      </header>
+      <HomeNav />
 
       {/* hero */}
       <HomeHero />

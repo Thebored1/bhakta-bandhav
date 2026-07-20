@@ -179,10 +179,11 @@
   letter-spacing: 0.18em;
   margin-top: 5px;
   color: var(--bb-brown);
+  white-space: nowrap;
 }
 .bb-navlinks {
   display: flex;
-  gap: 24px;
+  gap: 20px;
   align-items: center;
   font-family: var(--bb-label);
   font-size: 14.5px;
@@ -190,6 +191,7 @@
 }
 .bb-navlinks a {
   color: var(--bb-ink);
+  white-space: nowrap;
 }
 .bb-navlinks a:hover {
   color: var(--bb-terra);
@@ -206,20 +208,74 @@
   background: var(--bb-terra-deep);
   color: #ffffff;
 }
-.bb-home .bb-navmenu {
+/* ---- mobile hamburger toggle ---- */
+.bb-home .bb-navtoggle {
   display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 40px;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.bb-navtoggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--bb-ink);
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+.bb-navtoggle[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.bb-navtoggle[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.bb-navtoggle[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ---- mobile menu panel ---- */
+.bb-mobilemenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  flex-direction: column;
+  background: #fdf8f2;
+  border-bottom: 1px solid #c9a04e44;
+  box-shadow: 0 22px 44px -26px rgba(40, 16, 12, 0.5);
+  padding: 8px 0 14px;
+}
+.bb-mobilemenu a {
+  font-family: var(--bb-label);
+  font-size: 15px;
+  letter-spacing: 0.04em;
+  color: var(--bb-ink);
+  padding: 13px 24px;
+}
+.bb-mobilemenu a:hover {
+  color: var(--bb-terra);
+  background: #efe4cc;
+}
+.bb-home .bb-mobilemenu-donate {
+  margin: 12px 24px 2px;
+  padding: 13px 24px;
   background: var(--bb-terra);
   color: #ffffff;
-  font-family: var(--bb-label);
-  font-size: 12px;
-  letter-spacing: 0.1em;
-  padding: 9px 16px;
+  text-align: center;
   border-radius: 3px;
-  place-items: center;
+  letter-spacing: 0.1em;
 }
-.bb-home .bb-navmenu:hover {
-  color: #fff;
+.bb-home .bb-mobilemenu-donate:hover {
   background: var(--bb-terra-deep);
+  color: #ffffff;
 }
 
 /* ---- hero ---- */
@@ -911,7 +967,25 @@
 /* ============================================================
    Responsive
    ============================================================ */
-@media (max-width: 860px) {
+
+/* Compact tier — between the mobile breakpoint and the width the full
+   horizontal nav needs (~1150px), tighten the nav's padding, gap and label
+   size so all links stay on one line instead of overflowing off-screen. */
+@media (min-width: 961px) and (max-width: 1200px) {
+  .bb-nav {
+    padding: 16px 28px;
+  }
+  .bb-navlinks {
+    gap: 13px;
+    font-size: 13px;
+  }
+  .bb-navlinks a.bb-btn-donate {
+    padding: 9px 15px;
+    letter-spacing: 0.08em;
+  }
+}
+
+@media (max-width: 960px) {
   .bb-util {
     padding: 8px 18px;
     font-size: 12px;
@@ -924,8 +998,11 @@
   .bb-navlinks {
     display: none;
   }
-  .bb-home .bb-navmenu {
-    display: grid;
+  .bb-home .bb-navtoggle {
+    display: flex;
+  }
+  .bb-mobilemenu.open {
+    display: flex;
   }
   .bb-sec,
   .bb-join {
