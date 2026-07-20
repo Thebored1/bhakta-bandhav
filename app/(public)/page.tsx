@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getPosts, getEvents } from "@/lib/supabase/queries";
+import HomeReveal from "@/components/HomeReveal";
 import "./home.css";
 
 export const metadata: Metadata = {
@@ -118,6 +119,7 @@ export default async function Home() {
 
   return (
     <div className="bb-home">
+      <HomeReveal />
       {/* utility bar */}
       <div className="bb-util">
         <span className="bb-sanskrit">
@@ -163,19 +165,19 @@ export default async function Home() {
         />
         <div className="bb-hero-scrim" />
         <div className="bb-hero-inner">
-          <span className="bb-eyebrow">
+          <span className="bb-eyebrow bb-reveal">
             A Spiritual Family in the Line of Lord Chaitanya
           </span>
-          <h1 className="bb-hero-title">
+          <h1 className="bb-hero-title bb-reveal bb-d1">
             Awakening divine <em>love</em> in every heart.
           </h1>
-          <p className="bb-hero-sub">
+          <p className="bb-hero-sub bb-reveal bb-d1">
             We are devotees from around the world, followers of Lord Chaitanya,
             dedicated to the path of pure Bhakti — sharing the teachings of Srila
             B.V. Narayana Gosvami and serving love and devotion to Sri
             Radha-Krishna.
           </p>
-          <div className="bb-hero-cta">
+          <div className="bb-hero-cta bb-reveal bb-d2">
             <Link href="/about" className="bb-btn bb-btn-gold">
               Discover our mission
             </Link>
@@ -195,15 +197,15 @@ export default async function Home() {
       {/* darshana */}
       <section className="bb-sec bb-sec--alt">
         <div className="bb-darshana">
-          <span className="bb-eyebrow">Darshana</span>
-          <div className="bb-darshana-title">Sri Sri Radha Ramana Jiu</div>
-          <div className="bb-darshana-frame">
+          <span className="bb-eyebrow bb-reveal">Darshana</span>
+          <div className="bb-darshana-title bb-reveal bb-d1">Sri Sri Radha Ramana Jiu</div>
+          <div className="bb-darshana-frame bb-reveal bb-d1">
             <img
               src="/images/home/altar.webp"
               alt="Altar of Sri Sri Radha Ramana Jiu with the gopis and manjaris, and the murtis of Srila Gurudeva and Srila Prabhupada"
             />
           </div>
-          <p className="bb-darshana-cap">
+          <p className="bb-darshana-cap bb-reveal bb-d2">
             Sri Radha Ramana with the sakhis and manjaris, attended by our
             beloved Srila Gurudeva and Srila Prabhupada — the heart of our
             family&rsquo;s worship.
@@ -214,7 +216,7 @@ export default async function Home() {
       {/* who are we */}
       <section className="bb-sec bb-sec--bg">
         <div className="bb-grid2">
-          <div>
+          <div className="bb-reveal">
             <span className="bb-eyebrow">Who Are We?</span>
             <h2>A family devoted to the path of pure love.</h2>
             <p>
@@ -234,7 +236,7 @@ export default async function Home() {
             </Link>
             <div className="bb-about-sign">— Bhakta Bandhav Parivar</div>
           </div>
-          <div className="bb-about-media">
+          <div className="bb-about-media bb-reveal bb-d1">
             <div className="bb-about-main">
               <img
                 src="/images/home/about-family.webp"
@@ -252,14 +254,16 @@ export default async function Home() {
       <section className="bb-sec bb-sec--alt">
         <div className="bb-grid2 bb-grid2--books">
           <div
-            className="bb-books"
+            className="bb-books bb-reveal"
             aria-label="A selection of Bhakta Bandhav publications"
           >
             {BOOK_IMAGES.map((src, i) => (
-              <img key={src} src={src} alt={`Bhakta Bandhav publication ${i + 1}`} />
+              <span className="bb-book" key={src}>
+                <img src={src} alt={`Bhakta Bandhav publication ${i + 1}`} />
+              </span>
             ))}
           </div>
-          <div>
+          <div className="bb-reveal bb-d1">
             <span className="bb-eyebrow">Books &amp; Publications</span>
             <h2>Preserving the teachings, in print.</h2>
             <p style={{ marginBottom: 6 }}>
@@ -285,7 +289,7 @@ export default async function Home() {
 
       {/* festivals */}
       <section className="bb-sec bb-sec--bg">
-        <div className="bb-fest-head">
+        <div className="bb-fest-head bb-reveal">
           <span className="bb-eyebrow">Festivals &amp; Kirtan</span>
           <h2>Celebrating together in song and dance.</h2>
           <p>
@@ -294,7 +298,7 @@ export default async function Home() {
             sweet sound of the Holy Names.
           </p>
         </div>
-        <div className="bb-fest-grid">
+        <div className="bb-fest-grid bb-reveal bb-d1">
           {FEST_IMAGES.map((f) => (
             <img key={f.src} src={f.src} alt={f.alt} />
           ))}
@@ -303,7 +307,7 @@ export default async function Home() {
 
       {/* events */}
       <section className="bb-sec bb-sec--maroon">
-        <div className="bb-events-head">
+        <div className="bb-events-head bb-reveal">
           <div>
             <span className="bb-eyebrow">Upcoming Events</span>
             <h2>Gather, serve, and celebrate together.</h2>
@@ -312,7 +316,10 @@ export default async function Home() {
         </div>
         <div>
           {events.map((ev, i) => (
-            <div className="bb-event-row" key={ev.id || `${ev.title}-${i}`}>
+            <div
+              className={`bb-event-row bb-reveal bb-d${Math.min(i + 1, 3)}`}
+              key={ev.id || `${ev.title}-${i}`}
+            >
               <div className="bb-event-date">
                 <div className="bb-d">{ev.d}</div>
                 <div className="bb-m">{ev.m}</div>
@@ -336,7 +343,7 @@ export default async function Home() {
 
       {/* blog */}
       <section className="bb-sec bb-sec--bg">
-        <div className="bb-blog-head">
+        <div className="bb-blog-head bb-reveal">
           <div>
             <span className="bb-eyebrow">From the Blog</span>
             <h2>Reflections on the path of devotion.</h2>
@@ -347,7 +354,10 @@ export default async function Home() {
           {posts.map((post, i) => {
             const href = post.slug ? `/blog/${post.slug}` : "/blog";
             return (
-              <article className="bb-blog-card" key={post.slug || `${post.title}-${i}`}>
+              <article
+                className={`bb-blog-card bb-reveal bb-d${Math.min(i + 1, 3)}`}
+                key={post.slug || `${post.title}-${i}`}
+              >
                 <img src={post.image} alt={post.title} />
                 <div className="bb-blog-tag">{post.tag} · 6 min read</div>
                 <h3>{post.title}</h3>
@@ -364,7 +374,7 @@ export default async function Home() {
       {/* join */}
       <section className="bb-join" id="join">
         <div className="bb-join-glow" />
-        <div className="bb-join-inner">
+        <div className="bb-join-inner bb-reveal">
           <span className="bb-eyebrow">Join the Family</span>
           <h2>Everyone is most welcome.</h2>
           <p className="bb-join-lead">
