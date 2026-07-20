@@ -122,6 +122,56 @@ export default function SevasPage() {
               </div>
             </article>
 
+            {/* New York — Thakurji Clothes Seva */}
+            <article className="seva">
+              <div className="seva-media placeholder" aria-hidden="true">
+                <Icon name="lotus" size={72} />
+              </div>
+              <div>
+                <span className="eyebrow">New York · Deity Seva</span>
+                <h3>Thakurji&rsquo;s clothes &amp; adornment</h3>
+                <p className="seva-lead">
+                  Offering fresh garments, garlands, and ornaments to our beloved Thakurji at Bhakta
+                  Bandhav NYC — dressing the Deities with love through every season and festival.
+                </p>
+                <p>
+                  Your contribution helps sew and offer new outfits, flowers, and paraphernalia for
+                  the daily worship of Sri Sri Radha-Krishna in New York.
+                </p>
+                <div className="seva-actions">
+                  {/* TODO: replace with the real donation link for Thakurji clothes seva */}
+                  <a className="btn btn-primary" href="mailto:bhaktabandhav@gmail.com?subject=Thakurji%20Clothes%20Seva%20(New%20York)">
+                    Support this seva <span className="arr"><Icon name="arrow" size={16} /></span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
+            {/* New York — Free Meal Distribution */}
+            <article className="seva">
+              <div className="seva-media placeholder" aria-hidden="true">
+                <Icon name="lotus" size={72} />
+              </div>
+              <div>
+                <span className="eyebrow">New York · Prasadam Seva</span>
+                <h3>Free meal distribution</h3>
+                <p className="seva-lead">
+                  Preparing and distributing free sanctified meals in the New York community — sharing
+                  Krishna&rsquo;s prasadam freely with all who come.
+                </p>
+                <p>
+                  Every gift helps cover ingredients, cooking, and distribution so that no one is
+                  turned away from a warm, loving plate of prasadam.
+                </p>
+                <div className="seva-actions">
+                  {/* TODO: replace with the real donation link for free meal distribution */}
+                  <a className="btn btn-primary" href="mailto:bhaktabandhav@gmail.com?subject=Free%20Meal%20Distribution%20Seva%20(New%20York)">
+                    Support this seva <span className="arr"><Icon name="arrow" size={16} /></span>
+                  </a>
+                </div>
+              </div>
+            </article>
+
           </div>
         </div>
       </section>

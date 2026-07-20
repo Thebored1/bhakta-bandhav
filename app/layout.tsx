@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import {
   Cormorant_Garamond,
+  EB_Garamond,
   Marcellus,
   Mukta,
+  Noto_Serif_Devanagari,
 } from "next/font/google";
 import "react-quill-new/dist/quill.snow.css";
 import "./globals.css";
@@ -12,6 +14,14 @@ const cormorant = Cormorant_Garamond({
   weight: ["400", "500", "600", "700"],
   style: ["normal", "italic"],
   variable: "--font-cormorant",
+  display: "swap",
+});
+
+const ebGaramond = EB_Garamond({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  style: ["normal", "italic"],
+  variable: "--font-eb-garamond",
   display: "swap",
 });
 
@@ -26,6 +36,13 @@ const mukta = Mukta({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
   variable: "--font-mukta",
+  display: "swap",
+});
+
+const notoDevanagari = Noto_Serif_Devanagari({
+  subsets: ["devanagari"],
+  weight: ["400", "600"],
+  variable: "--font-noto-deva",
   display: "swap",
 });
 
@@ -70,7 +87,7 @@ export default function RootLayout({
     <html
       lang="en"
       data-palette="peach"
-      className={`${cormorant.variable} ${marcellus.variable} ${mukta.variable}`}
+      className={`${cormorant.variable} ${ebGaramond.variable} ${marcellus.variable} ${mukta.variable} ${notoDevanagari.variable}`}
     >
       <body>
         <script

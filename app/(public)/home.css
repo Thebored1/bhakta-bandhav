@@ -1,0 +1,940 @@
+/* ============================================================
+   Bhakta Bandhav — Home page redesign
+   Self-contained styles, scoped under .bb-home so they never
+   collide with the shared globals.css used by other pages.
+   ============================================================ */
+
+.bb-home {
+  --bb-bg: #f6efdf;
+  --bb-bg-alt: #efe4cc;
+  --bb-maroon: #4a0e2e;
+  --bb-maroon-deep: #3a0a22;
+  --bb-gold: #e6c374;
+  --bb-gold-deep: #b8892f;
+  --bb-gold-mute: #a67a2e;
+  --bb-link: #8a5a1e;
+  --bb-body: #492536;
+
+  --bb-display: var(--font-cormorant), Georgia, serif;
+  --bb-serif: var(--font-eb-garamond), Georgia, serif;
+  --bb-label: var(--font-marcellus), Georgia, serif;
+  --bb-deva: var(--font-noto-deva), var(--font-eb-garamond), serif;
+
+  font-family: var(--bb-serif);
+  color: var(--bb-maroon-deep);
+  background: var(--bb-bg);
+}
+
+.bb-home *,
+.bb-home *::before,
+.bb-home *::after {
+  box-sizing: border-box;
+}
+
+.bb-home ::selection {
+  background: var(--bb-gold);
+  color: var(--bb-maroon);
+}
+
+.bb-home a {
+  color: var(--bb-link);
+  text-decoration: none;
+  transition: color 0.18s ease, opacity 0.18s ease, background 0.18s ease;
+}
+.bb-home a:hover {
+  color: var(--bb-gold-deep);
+}
+
+.bb-home img {
+  max-width: 100%;
+}
+
+/* ---- eyebrow / labels ---- */
+.bb-eyebrow {
+  font-family: var(--bb-label);
+  letter-spacing: 0.22em;
+  font-size: 12.5px;
+  color: #8a5a1e;
+  text-transform: uppercase;
+}
+
+/* ---- utility bar ---- */
+.bb-util {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 9px 48px;
+  background: var(--bb-maroon);
+  color: #e9c9d8;
+  font-size: 14px;
+}
+.bb-util .bb-sanskrit {
+  font-family: var(--bb-deva);
+  color: #f0d4a8;
+}
+.bb-util .bb-sanskrit em {
+  font-family: var(--bb-serif);
+  font-style: italic;
+  color: #d0a9bd;
+}
+.bb-util-links {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+.bb-util-links a {
+  color: #e9c9d8;
+}
+.bb-util-links a:hover {
+  color: #fbeef4;
+}
+.bb-util-links a.bb-donate {
+  color: var(--bb-gold);
+  font-family: var(--bb-label);
+  letter-spacing: 0.1em;
+  font-size: 13px;
+}
+
+/* ---- main nav ---- */
+.bb-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 48px;
+  background: #f6efdff2;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #c9a04e44;
+}
+.bb-brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+}
+.bb-brand img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+.bb-brand-name {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+.bb-brand-name b {
+  font-family: var(--bb-label);
+  font-weight: 400;
+  color: var(--bb-maroon-deep);
+  font-size: 21px;
+  letter-spacing: 0.02em;
+}
+.bb-brand-name span {
+  font-size: 11.5px;
+  letter-spacing: 0.18em;
+  margin-top: 5px;
+  color: var(--bb-gold-mute);
+}
+.bb-navlinks {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  font-family: var(--bb-label);
+  font-size: 14.5px;
+  letter-spacing: 0.04em;
+}
+.bb-navlinks a {
+  color: #5a2038;
+}
+.bb-navlinks a:hover {
+  color: var(--bb-gold-deep);
+}
+.bb-navlinks a.bb-btn-donate {
+  background: var(--bb-maroon);
+  color: #fbf3e2;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  padding: 10px 20px;
+  border-radius: 3px;
+}
+.bb-navlinks a.bb-btn-donate:hover {
+  background: var(--bb-maroon-deep);
+  color: #fbf3e2;
+}
+.bb-home .bb-navmenu {
+  display: none;
+  background: var(--bb-maroon);
+  color: #fbf3e2;
+  font-family: var(--bb-label);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  padding: 9px 16px;
+  border-radius: 3px;
+  place-items: center;
+}
+.bb-home .bb-navmenu:hover {
+  color: #fff;
+  background: var(--bb-maroon-deep);
+}
+
+/* ---- hero ---- */
+.bb-hero {
+  position: relative;
+  height: 640px;
+  overflow: hidden;
+}
+.bb-hero > img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 28%;
+}
+.bb-hero-scrim {
+  position: absolute;
+  inset: 0;
+  /* Horizontal wash keeps the text column dark; the vertical wash darkens
+     the lower third so the CTA buttons read against the bright image. */
+  background: linear-gradient(
+      90deg,
+      #2a0616d9 0%,
+      #3a0a22a6 40%,
+      #3a0a2247 70%,
+      transparent 100%
+    ),
+    linear-gradient(0deg, rgba(18, 3, 10, 0.26) 0%, transparent 40%);
+}
+.bb-hero-inner {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 64px;
+  max-width: 780px;
+}
+.bb-hero-inner .bb-eyebrow {
+  color: var(--bb-gold);
+  letter-spacing: 0.24em;
+  font-size: 13px;
+  margin-bottom: 22px;
+}
+.bb-hero-title {
+  font-family: var(--bb-display);
+  font-weight: 600;
+  color: #fdf6e8;
+  font-size: 78px;
+  line-height: 1.02;
+  margin: 0 0 24px;
+  text-wrap: pretty;
+  text-shadow: 0 2px 26px rgba(18, 3, 10, 0.5);
+}
+.bb-hero-title em {
+  font-style: italic;
+  color: #f4cf74;
+}
+.bb-hero-sub {
+  color: #fbeede;
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.6;
+  margin: 0 0 34px;
+  max-width: 560px;
+  text-shadow: 0 1px 12px rgba(18, 3, 10, 0.6);
+}
+.bb-hero-cta {
+  display: flex;
+  gap: 16px;
+}
+.bb-hero-dots {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 9px;
+}
+.bb-hero-dots span {
+  width: 10px;
+  height: 4px;
+  border-radius: 2px;
+  background: #ffffff66;
+}
+.bb-hero-dots span.on {
+  width: 32px;
+  background: var(--bb-gold);
+}
+
+/* ---- buttons ----
+   Scoped under .bb-home so the colour declarations out-specify the base
+   `.bb-home a` link colour (which would otherwise repaint button labels in
+   the brown link colour and make them hard to read). */
+.bb-btn {
+  font-family: var(--bb-label);
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  padding: 15px 30px;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  font-weight: 600;
+}
+.bb-home .bb-btn-gold {
+  color: var(--bb-maroon);
+  background: var(--bb-gold);
+}
+.bb-home .bb-btn-gold:hover {
+  color: var(--bb-maroon);
+  background: #f2d789;
+}
+.bb-home .bb-btn-outline {
+  color: #fff;
+  border: 1px solid #ffffffcc;
+  background: rgba(42, 6, 22, 0.34);
+  backdrop-filter: blur(2px);
+  text-shadow: 0 1px 10px rgba(20, 4, 12, 0.55);
+}
+.bb-home .bb-btn-outline:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(42, 6, 22, 0.5);
+}
+.bb-home .bb-btn-maroon {
+  font-size: 14px;
+  color: #fbf3e2;
+  background: var(--bb-maroon);
+  padding: 14px 28px;
+}
+.bb-home .bb-btn-maroon:hover {
+  color: #fff;
+  background: var(--bb-maroon-deep);
+}
+
+/* ---- generic section ---- */
+.bb-sec {
+  padding: 96px 64px;
+}
+.bb-sec--alt {
+  background: var(--bb-bg-alt);
+}
+.bb-sec--bg {
+  background: var(--bb-bg);
+}
+.bb-sec h2 {
+  font-family: var(--bb-display);
+  font-weight: 600;
+  color: var(--bb-maroon-deep);
+  font-size: 46px;
+  line-height: 1.08;
+  margin: 14px 0 22px;
+}
+.bb-sec p {
+  color: var(--bb-body);
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.72;
+  margin: 0 0 18px;
+}
+.bb-textlink {
+  font-family: var(--bb-label);
+  letter-spacing: 0.08em;
+  font-size: 14px;
+  color: var(--bb-link);
+}
+
+/* ---- darshana ---- */
+.bb-darshana {
+  width: min(1080px, 94%);
+  margin: 0 auto;
+  text-align: center;
+}
+.bb-darshana .bb-eyebrow {
+  letter-spacing: 0.26em;
+}
+.bb-darshana-title {
+  font-family: var(--bb-display);
+  font-weight: 600;
+  color: var(--bb-maroon-deep);
+  font-size: clamp(30px, 3.6vw, 46px);
+  line-height: 1.1;
+  margin: 20px 0 26px;
+}
+.bb-darshana-frame {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 54px 100px -54px rgba(40, 16, 12, 0.65),
+    0 0 0 1px rgba(184, 137, 47, 0.55);
+}
+.bb-darshana-frame img {
+  width: 100%;
+  display: block;
+}
+/* Scoped under .bb-darshana so it out-specifies the generic `.bb-sec p`
+   rule, which would otherwise clobber the auto margins (breaking the
+   centering) along with the font-size and colour. */
+.bb-darshana .bb-darshana-cap {
+  max-width: 60ch;
+  margin: 26px auto 0;
+  color: #6a4252;
+  font-family: var(--bb-display);
+  font-style: italic;
+  font-size: clamp(17px, 1.9vw, 22px);
+  line-height: 1.55;
+}
+
+/* ---- two-column grid ---- */
+.bb-grid2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+.bb-grid2--books {
+  grid-template-columns: 1.05fr 1fr;
+}
+
+/* who are we */
+.bb-about-sign {
+  margin-top: 20px;
+  font-family: var(--bb-display);
+  font-style: italic;
+  font-size: 20px;
+  color: var(--bb-gold-mute);
+}
+.bb-about-media {
+  position: relative;
+  padding-bottom: 40px;
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+}
+.bb-about-main {
+  aspect-ratio: 4 / 5;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 40px 80px -50px rgba(40, 16, 12, 0.7);
+}
+.bb-about-main img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.bb-about-float {
+  position: absolute;
+  width: 46%;
+  aspect-ratio: 1;
+  right: -28px;
+  bottom: -8px;
+  border-radius: 4px;
+  border: 6px solid var(--bb-bg);
+  overflow: hidden;
+  box-shadow: 0 30px 60px -34px rgba(40, 16, 12, 0.6);
+}
+.bb-about-float img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ---- books collage + stats ---- */
+.bb-books {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.bb-books img {
+  width: 100%;
+  aspect-ratio: 3 / 4.2;
+  object-fit: cover;
+  border-radius: 3px 6px 6px 3px;
+  box-shadow: 0 22px 44px -28px rgba(150, 32, 101, 0.45);
+}
+.bb-books img:nth-child(2),
+.bb-books img:nth-child(5) {
+  margin-top: 26px;
+}
+.bb-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 36px 0;
+}
+.bb-stat .bb-num {
+  font-family: var(--bb-display);
+  font-size: 50px;
+  color: var(--bb-gold-deep);
+  line-height: 1;
+}
+.bb-stat .bb-lbl {
+  color: #8a6a3e;
+  font-size: 13px;
+  letter-spacing: 0.1em;
+  margin-top: 6px;
+  text-transform: uppercase;
+}
+
+/* ---- festivals ---- */
+.bb-fest-head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 48px;
+}
+.bb-fest-head h2 {
+  margin: 14px 0 16px;
+}
+.bb-fest-head p {
+  line-height: 1.65;
+  margin: 0;
+}
+.bb-fest-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: 210px 210px;
+  gap: 14px;
+}
+.bb-fest-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.bb-fest-grid img:first-child {
+  grid-row: span 2;
+}
+
+/* ---- events ---- */
+.bb-sec--maroon {
+  background: var(--bb-maroon);
+}
+.bb-events-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 44px;
+}
+.bb-events-head h2 {
+  color: #fbeef4;
+  margin: 14px 0 0;
+}
+.bb-events-head .bb-eyebrow {
+  color: var(--bb-gold);
+}
+.bb-events-head a {
+  color: var(--bb-gold);
+  font-family: var(--bb-label);
+  letter-spacing: 0.08em;
+  font-size: 14px;
+}
+.bb-event-row {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: clamp(20px, 4vw, 56px);
+  align-items: center;
+  padding: 30px 8px;
+  border-top: 1px solid #ffffff22;
+}
+.bb-event-row:last-child {
+  border-bottom: 1px solid #ffffff22;
+}
+.bb-event-date {
+  text-align: center;
+  min-width: 78px;
+  font-family: var(--bb-display);
+  color: var(--bb-gold);
+}
+.bb-event-date .bb-d {
+  font-size: 52px;
+  line-height: 0.9;
+}
+.bb-event-date .bb-m {
+  letter-spacing: 0.15em;
+  font-size: 14px;
+  color: #d0a9bd;
+}
+.bb-event-info h3 {
+  font-family: var(--bb-label);
+  font-weight: 400;
+  color: #fbeef4;
+  font-size: 24px;
+  margin: 0 0 6px;
+}
+.bb-event-info p {
+  color: #d0a9bd;
+  font-size: 15px;
+  margin: 0;
+}
+.bb-event-row a.bb-details {
+  font-family: var(--bb-label);
+  letter-spacing: 0.08em;
+  font-size: 13px;
+  color: #fbeef4;
+  border: 1px solid #c9a04e88;
+  padding: 11px 22px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.bb-event-row a.bb-details:hover {
+  color: var(--bb-maroon);
+  background: var(--bb-gold);
+  border-color: var(--bb-gold);
+}
+
+/* ---- blog ---- */
+.bb-blog-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 44px;
+}
+.bb-blog-head h2 {
+  margin: 14px 0 0;
+}
+.bb-blog-head a {
+  color: var(--bb-link);
+  font-family: var(--bb-label);
+  letter-spacing: 0.08em;
+  font-size: 14px;
+}
+.bb-blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.bb-blog-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 6px;
+  margin-bottom: 16px;
+}
+/* This photo frames Srila Prabhupada's face high-right; bias the crop so
+   his face isn't cut off (matches the original design's hand-tuned crop). */
+.bb-blog-card img[src$="blog-japa.png"] {
+  object-position: 60% 10%;
+}
+.bb-blog-tag {
+  color: var(--bb-gold-mute);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+.bb-blog-card h3 {
+  font-family: var(--bb-label);
+  font-weight: 400;
+  color: var(--bb-maroon-deep);
+  font-size: 21px;
+  margin: 0 0 8px;
+}
+.bb-blog-card p {
+  color: #593c4a;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.55;
+  margin: 0 0 12px;
+}
+.bb-blog-card a.bb-more {
+  color: var(--bb-link);
+  font-size: 15px;
+}
+
+/* ---- join ---- */
+.bb-join {
+  position: relative;
+  padding: 104px 64px;
+  text-align: center;
+  background: var(--bb-maroon);
+  overflow: hidden;
+}
+.bb-join-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 0%, #e6c37422, transparent 60%);
+}
+.bb-join-inner {
+  position: relative;
+  max-width: 660px;
+  margin: 0 auto;
+}
+.bb-join-inner .bb-eyebrow {
+  color: var(--bb-gold);
+}
+.bb-join h2 {
+  font-family: var(--bb-display);
+  font-weight: 600;
+  color: #fbeef4;
+  font-size: 54px;
+  line-height: 1.05;
+  margin: 14px 0 18px;
+}
+.bb-join-lead {
+  color: #e9c9d8;
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 14px;
+}
+.bb-join-note {
+  color: #c99bb0;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 30px;
+}
+.bb-join-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  max-width: 480px;
+  margin: 0 auto;
+}
+.bb-join-form input {
+  flex: 1;
+  background: var(--bb-maroon-deep);
+  border: 1px solid #ffffff33;
+  border-radius: 3px;
+  padding: 15px 18px;
+  color: #fbeef4;
+  font-family: var(--bb-serif);
+  font-size: 16px;
+}
+.bb-join-form input::placeholder {
+  color: #c99bb0;
+}
+.bb-join-form a {
+  font-family: var(--bb-label);
+  letter-spacing: 0.1em;
+  font-size: 14px;
+  color: var(--bb-maroon);
+  background: var(--bb-gold);
+  padding: 15px 28px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.bb-join-form a:hover {
+  color: var(--bb-maroon);
+  background: #f0d489;
+}
+.bb-join-fine {
+  color: #c99bb0;
+  font-size: 14px;
+  margin: 16px 0 0;
+}
+
+/* ---- footer ---- */
+.bb-footer {
+  background: var(--bb-bg);
+  padding: 64px 64px 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  gap: 44px;
+  border-top: 1px solid #c9a04e44;
+}
+.bb-footer-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.bb-footer-brand-row img {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+}
+.bb-footer-brand-row b {
+  font-family: var(--bb-label);
+  font-weight: 400;
+  color: var(--bb-maroon-deep);
+  font-size: 18px;
+}
+.bb-footer-brand-row small {
+  color: var(--bb-gold-mute);
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  margin-top: 4px;
+  display: block;
+}
+.bb-footer-brand p {
+  color: #7a5464;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 340px;
+}
+.bb-footer-col h4 {
+  font-family: var(--bb-label);
+  font-weight: 400;
+  color: var(--bb-gold-mute);
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  margin: 0 0 14px;
+}
+.bb-footer-col .bb-links {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  font-size: 15px;
+}
+.bb-footer-col .bb-links a {
+  color: #6a3a4e;
+}
+.bb-footer-col .bb-links a:hover {
+  color: var(--bb-gold-deep);
+}
+.bb-footer-col p {
+  color: #7a5464;
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 4px;
+}
+.bb-footer-contact {
+  border: 1px solid var(--bb-gold-deep);
+  border-radius: 4px;
+  padding: 11px 14px;
+  color: var(--bb-maroon);
+  font-size: 14px;
+  text-align: center;
+  font-family: var(--bb-label);
+  letter-spacing: 0.06em;
+  display: block;
+  margin-top: 10px;
+}
+.bb-footer-contact:hover {
+  color: var(--bb-maroon);
+  background: #efe4cc;
+}
+.bb-footer-bottom {
+  background: var(--bb-bg-alt);
+  padding: 18px 64px;
+  color: #8a6a4e;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.bb-footer-bottom a {
+  color: #8a6a4e;
+}
+.bb-footer-bottom a:hover {
+  color: var(--bb-gold-deep);
+}
+.bb-footer-bottom .bb-legal {
+  display: flex;
+  gap: 20px;
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 860px) {
+  .bb-util {
+    padding: 8px 18px;
+    font-size: 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .bb-nav {
+    padding: 12px 18px;
+  }
+  .bb-navlinks {
+    display: none;
+  }
+  .bb-home .bb-navmenu {
+    display: grid;
+  }
+  .bb-sec,
+  .bb-join {
+    padding: 56px 22px;
+  }
+  .bb-hero {
+    height: auto;
+    min-height: 560px;
+  }
+  .bb-hero-inner {
+    position: relative;
+    z-index: 2;
+    min-height: 560px;
+    justify-content: center;
+    padding: 48px 24px 60px;
+    max-width: none;
+  }
+  .bb-hero-title {
+    font-size: 44px;
+    margin-bottom: 20px;
+  }
+  .bb-hero-cta {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .bb-hero-cta a {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+  .bb-hero-dots {
+    display: none;
+  }
+  .bb-grid2,
+  .bb-grid2--books {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .bb-about-media {
+    padding-bottom: 20px;
+  }
+  .bb-fest-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 160px 160px 160px;
+  }
+  .bb-fest-grid img:first-child {
+    grid-row: span 1;
+    grid-column: span 2;
+  }
+  .bb-events-head,
+  .bb-blog-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .bb-event-row {
+    grid-template-columns: auto 1fr;
+    row-gap: 14px;
+  }
+  .bb-event-row a.bb-details {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+  .bb-blog-grid {
+    grid-template-columns: 1fr;
+  }
+  .bb-join-form {
+    flex-direction: column;
+  }
+  .bb-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    padding: 48px 22px 32px;
+  }
+  .bb-footer-brand {
+    grid-column: 1 / -1;
+  }
+  .bb-footer-bottom {
+    padding: 18px 22px;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+  }
+  .bb-sec h2,
+  .bb-hero-title {
+    text-wrap: pretty;
+  }
+  .bb-sec h2 {
+    font-size: 34px;
+  }
+}

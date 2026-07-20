@@ -27,6 +27,12 @@ export default function ClientLayout({ children }: { children: React.ReactNode }
     return () => io.disconnect();
   }, [pathname]);
 
+  // The home page ("/") is a self-contained redesign that renders its own
+  // utility bar, nav, and footer, so we skip the shared chrome there.
+  if (pathname === "/") {
+    return <>{children}</>;
+  }
+
   return (
     <>
       <UtilityBar />

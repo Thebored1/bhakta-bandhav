@@ -29,7 +29,7 @@ export default function Join() {
       <div className="wrap grid">
         <div>
           <span className="eyebrow reveal" style={{ color: "var(--on-dark-mut)" }}>
-            Join the Family
+            Get Involved
           </span>
           <h2 className="reveal d1">Everyone is most welcome.</h2>
           <p className="reveal d1">

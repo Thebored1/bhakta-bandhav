@@ -131,7 +131,7 @@ export default function AboutPage() {
                   Read our FAQs <span className="arr"><Icon name="arrow" size={16} /></span>
                 </a>
                 <a className="textlink" href="/#join">
-                  Join the family <Icon name="arrow" size={14} />
+                  Get Involved <Icon name="arrow" size={14} />
                 </a>
               </div>
             </div>

@@ -18,8 +18,8 @@ export function UtilityBar() {
       <div className="wrap">
         <span className="sanskrit">वसुधैव कुटुम्बकम् · The world is one family</span>
         <div className="util-links">
-          <a href="#join" onClick={(e) => smoothScroll("#join", e)}>Donate</a>
-          <a href="#">Contact</a>
+          <a href="/#join">Donate</a>
+          <a href="/contact">Contact</a>
           <div className="util-socials">
             <a href="#" aria-label="YouTube"><Icon name="yt" size={17} /></a>
             <a href="#" aria-label="Instagram"><Icon name="ig" size={15} /></a>
@@ -91,7 +91,7 @@ function MobileDrawer({
         ))}
 
         <div className="drawer-cta">
-          <a className="btn btn-primary" href="#join" onClick={go("#join")}>
+          <a className="btn btn-primary" href="/#join" onClick={go("/#join")}>
             Donate <Icon name="heart" size={15} />
           </a>
         </div>
@@ -179,7 +179,7 @@ export default function Nav() {
           </ul>
 
           <div className="nav-cta">
-            <a className="btn btn-primary" href="#join" onClick={go("#join")}>
+            <a className="btn btn-primary" href="/#join" onClick={go("/#join")}>
               Donate <Icon name="heart" size={15} />
             </a>
             <button

@@ -21,17 +21,10 @@ export const SITE: {
         { t: "FAQs",                 d: "Common questions on the path",     href: "/faqs" },
       ],
     },
-    {
-      label: "Calendar",
-      items: [
-        { t: "Rationale & Methodology", d: "The Surya-siddhanta almanac",           href: "/calendar#rationale" },
-        { t: "Mobile App",               d: "Bhakta Bandhav Calendar — iOS & Android", href: "/calendar#app" },
-        { t: "Māyāpura Calendar PDF",    d: "Full 2026–2027 calendar",               href: "/calendar#pdf" },
-      ],
-    },
-    { label: "Books",   items: null, href: "/books" },
     { label: "Seva",    items: null, href: "/sevas" },
-    { label: "Centers", items: null, href: "/centers" },
+    { label: "Events", items: null, href: "/events" },
+    { label: "Blog",   items: null, href: "/blog" },
+    { label: "Books",   items: null, href: "/books" },
     {
       label: "Media",
       items: [
@@ -40,8 +33,18 @@ export const SITE: {
         { t: "Donation Links",           d: "Support the mission",           href: "/media#donate" },
       ],
     },
-    { label: "Blog",   items: null, href: "/blog" },
-    { label: "Events", items: null, href: "/events" },
+    { label: "Centers", items: null, href: "/centers" },
+    { label: "Academy", items: null, href: "/academy" },
+    { label: "Teachers", items: null, href: "/teachers" },
+    { label: "Get in Touch", items: null, href: "/contact" },
+    {
+      label: "Calendar",
+      items: [
+        { t: "Rationale & Methodology", d: "The Surya-siddhanta almanac",           href: "/calendar#rationale" },
+        { t: "Mobile App",               d: "Bhakta Bandhav Calendar — iOS & Android", href: "/calendar#app" },
+        { t: "Māyāpura Calendar PDF",    d: "Full 2026–2027 calendar",               href: "/calendar#pdf" },
+      ],
+    },
   ],
 
   events: [

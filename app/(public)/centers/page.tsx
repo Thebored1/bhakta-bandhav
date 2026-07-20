@@ -21,7 +21,12 @@ export const metadata: Metadata = {
   },
 };
 
-const regions = [
+// TODO: add each center's real website to `site` (e.g. site: "https://…").
+// Centers with a `site` link out to that website; the rest fall back to an
+// email contact link so every card stays clickable.
+type Center = { name: string; location: string; leader: string; hq?: boolean; site?: string };
+
+const regions: { name: string; centers: Center[] }[] = [
   {
     name: "India & Nepal",
     centers: [
@@ -71,7 +76,7 @@ export default function CentersPage() {
           <div className="about-section-inner" style={{ marginBottom: 64 }}>
             <div className="about-section-aside reveal">
               <span className="eyebrow">Our Presence</span>
-              <h2>From Vrindavan to Vancouver.</h2>
+              <h2>From Vrindavan to Toronto.</h2>
             </div>
             <div className="prose">
               <p className="reveal">
@@ -100,20 +105,35 @@ export default function CentersPage() {
             <div className="region-block reveal" key={region.name}>
               <div className="region-label">{region.name}</div>
               <div className="centers-grid">
-                {region.centers.map((center) => (
-                  <div className="center-card" key={center.name + center.location}>
-                    {center.hq && (
-                      <div style={{ marginBottom: 8 }}>
-                        <span className="event-tag">Headquarters</span>
+                {region.centers.map((center) => {
+                  const href = center.site
+                    ? center.site
+                    : `mailto:bhaktabandhav@gmail.com?subject=${encodeURIComponent(center.name + " — " + center.location)}`;
+                  const external = Boolean(center.site);
+                  return (
+                    <a
+                      className="center-card"
+                      key={center.name + center.location}
+                      href={href}
+                      {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                    >
+                      {center.hq && (
+                        <div style={{ marginBottom: 8 }}>
+                          <span className="event-tag">Headquarters</span>
+                        </div>
+                      )}
+                      <div className="cc-name">{center.name}</div>
+                      <div className="cc-location">
+                        <Icon name="pin" size={13} /> {center.location}
                       </div>
-                    )}
-                    <div className="cc-name">{center.name}</div>
-                    <div className="cc-location">
-                      <Icon name="pin" size={13} /> {center.location}
-                    </div>
-                    <div className="cc-leader">{center.leader}</div>
-                  </div>
-                ))}
+                      <div className="cc-leader">{center.leader}</div>
+                      <div className="cc-link">
+                        <Icon name={external ? "globe" : "mail"} size={13} />{" "}
+                        {external ? "Visit website" : "Contact this center"}
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
             </div>
           ))}

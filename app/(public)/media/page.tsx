@@ -34,7 +34,6 @@ const essentials = [
 const youtube = [
   { name: "Rasikananda Swami",  handle: "@RasikanandaSwami", href: "https://www.youtube.com/@RasikanandaSwami" },
   { name: "Guru Bhakti",        handle: "@guru-bhakti",       href: "https://www.youtube.com/@guru-bhakti" },
-  { name: "Vrindavan Das",      handle: "@vrndavandas",       href: "https://www.youtube.com/@vrndavandas" },
   { name: "Krsna Karunya",      handle: "@krsnakarunya",      href: "https://www.youtube.com/@krsnakarunya" },
 ];
 
@@ -43,7 +42,6 @@ const instagram = [
   { name: "Bhakta Bandhav",           handle: "@bhakta.bandhav",         href: "https://www.instagram.com/bhakta.bandhav" },
   { name: "Bhakta Bandhav NYC",       handle: "@bhaktabandhavnyc",       href: "https://www.instagram.com/bhaktabandhavnyc" },
   { name: "Bhakta Bandhav Canada",    handle: "@bhaktabandhav.canada",   href: "https://www.instagram.com/bhaktabandhav.canada" },
-  { name: "Bhakta Bandhav Books",     handle: "@bhaktabandhavbooks",     href: "https://www.instagram.com/bhaktabandhavbooks" },
   { name: "Radhe Kunj Temple",        handle: "@radhe_kunj",             href: "https://www.instagram.com/radhe_kunj" },
   { name: "Bhakta Bandhav Gurukulam", handle: "@bhakta.bandhava",        href: "https://www.instagram.com/bhakta.bandhava" },
   { name: "Madhuri Kunj",             handle: "@madhuri_kunj",           href: "https://www.instagram.com/madhuri_kunj" },

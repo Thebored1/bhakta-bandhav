@@ -86,7 +86,7 @@ export default function Hero() {
             <span className="arr"><Icon name="arrow" size={16} /></span>
           </a>
           <a className="btn btn-accent" href="#join" onClick={scrollTo("#join")}>
-            Join the family
+            Get Involved
           </a>
         </div>
 
