@@ -77,7 +77,7 @@ export default function HomeHero() {
           Radha-Krishna.
         </p>
         <div className="bb-hero-cta bb-reveal bb-d2">
-          <Link href="/about" className="bb-btn bb-btn-gold">
+          <Link href="/about" className="bb-btn bb-btn-terra">
             Discover our mission
           </Link>
           <Link href="#join" className="bb-btn bb-btn-outline">
