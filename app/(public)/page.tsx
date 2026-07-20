@@ -241,7 +241,7 @@ export default async function Home() {
       </section>
 
       {/* events */}
-      <section className="bb-sec bb-sec--maroon">
+      <section className="bb-sec bb-sec--alt bb-sec--events">
         <div className="bb-events-head bb-reveal">
           <div>
             <span className="bb-eyebrow">Upcoming Events</span>

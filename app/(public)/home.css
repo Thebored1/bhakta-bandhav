@@ -632,10 +632,9 @@
   grid-row: span 2;
 }
 
-/* ---- events ---- */
-.bb-sec--maroon {
-  background: var(--bb-terra-grad);
-}
+/* ---- events ----
+   Shares the peach background of the books section (bb-sec--alt), so the
+   text uses the same dark palette rather than white-on-terracotta. */
 .bb-events-head {
   display: flex;
   justify-content: space-between;
@@ -650,14 +649,14 @@
   margin: 0 auto;
 }
 .bb-events-head h2 {
-  color: #ffffff;
+  color: var(--bb-ink);
   margin: 14px 0 0;
 }
 .bb-events-head .bb-eyebrow {
-  color: var(--bb-gold-soft);
+  color: var(--bb-brown);
 }
 .bb-events-head a {
-  color: var(--bb-gold-soft);
+  color: var(--bb-brown);
   font-family: var(--bb-label);
   letter-spacing: 0.08em;
   font-size: 14px;
@@ -668,16 +667,16 @@
   gap: clamp(20px, 4vw, 56px);
   align-items: center;
   padding: 30px 8px;
-  border-top: 1px solid #ffffff22;
+  border-top: 1px solid rgba(74, 47, 13, 0.18);
 }
 .bb-event-row:last-child {
-  border-bottom: 1px solid #ffffff22;
+  border-bottom: 1px solid rgba(74, 47, 13, 0.18);
 }
 .bb-event-date {
   text-align: center;
   min-width: 78px;
   font-family: var(--bb-display);
-  color: var(--bb-gold-soft);
+  color: var(--bb-terra-deep);
 }
 .bb-event-date .bb-d {
   font-size: 52px;
@@ -686,17 +685,17 @@
 .bb-event-date .bb-m {
   letter-spacing: 0.15em;
   font-size: 14px;
-  color: #ffffff;
+  color: var(--bb-ink);
 }
 .bb-event-info h3 {
   font-family: var(--bb-label);
   font-weight: 400;
-  color: #ffffff;
+  color: var(--bb-ink);
   font-size: 24px;
   margin: 0 0 6px;
 }
 .bb-event-info p {
-  color: #ffffff;
+  color: var(--bb-ink);
   font-size: 15px;
   margin: 0;
 }
@@ -704,16 +703,16 @@
   font-family: var(--bb-label);
   letter-spacing: 0.08em;
   font-size: 13px;
-  color: #ffffff;
-  border: 1px solid #c9a04e88;
+  color: var(--bb-brown);
+  border: 1px solid var(--bb-terra);
   padding: 11px 22px;
   border-radius: 3px;
   white-space: nowrap;
 }
 .bb-event-row a.bb-details:hover {
-  color: var(--bb-terra);
-  background: var(--bb-gold-soft);
-  border-color: var(--bb-gold-soft);
+  color: #ffffff;
+  background: var(--bb-terra);
+  border-color: var(--bb-terra);
 }
 
 /* ---- blog ---- */
