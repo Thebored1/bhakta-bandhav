@@ -7,18 +7,22 @@ const SLIDES = [
   {
     src: "/images/home/hero-radharani.webp",
     alt: "Srimati Radharani adorned with flowers and garlands",
+    pos: "center 28%",
   },
   {
     src: "/images/hero-2.webp",
     alt: "Sri Krishna playing the flute amid flower offerings",
+    pos: "center 22%",
   },
   {
     src: "/images/hero-3.webp",
     alt: "A garlanded murti of a revered acharya",
+    pos: "center 35%",
   },
   {
-    src: "/images/hero-4.webp",
-    alt: "A garlanded murti of Srila Swami Prabhupada",
+    src: "/images/home/fest-kirtan.webp",
+    alt: "Devotees gathered for kirtan in the festival hall",
+    pos: "center 50%",
   },
 ];
 
@@ -54,6 +58,7 @@ export default function HomeHero() {
           className={"bb-hero-slide" + (idx === i ? " on" : "")}
           src={s.src}
           alt={s.alt}
+          style={{ objectPosition: s.pos }}
           aria-hidden={idx !== i}
         />
       ))}
