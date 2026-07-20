@@ -64,25 +64,27 @@ export default function HomeHero() {
       ))}
       <div className="bb-hero-scrim" />
       <div className="bb-hero-inner">
-        <span className="bb-eyebrow bb-reveal">
-          A Spiritual Family in the Line of Lord Chaitanya
-        </span>
-        <h1 className="bb-hero-title bb-reveal bb-d1">
-          Awakening divine <em>love</em> in every heart.
-        </h1>
-        <p className="bb-hero-sub bb-reveal bb-d1">
-          We are devotees from around the world, followers of Lord Chaitanya,
-          dedicated to the path of pure Bhakti — sharing the teachings of Srila
-          B.V. Narayana Gosvami and serving love and devotion to Sri
-          Radha-Krishna.
-        </p>
-        <div className="bb-hero-cta bb-reveal bb-d2">
-          <Link href="/about" className="bb-btn bb-btn-terra">
-            Discover our mission
-          </Link>
-          <Link href="#join" className="bb-btn bb-btn-outline">
-            Join the family
-          </Link>
+        <div className="bb-hero-content">
+          <span className="bb-eyebrow bb-reveal">
+            A Spiritual Family in the Line of Lord Chaitanya
+          </span>
+          <h1 className="bb-hero-title bb-reveal bb-d1">
+            Awakening divine <em>love</em> in every heart.
+          </h1>
+          <p className="bb-hero-sub bb-reveal bb-d1">
+            We are devotees from around the world, followers of Lord Chaitanya,
+            dedicated to the path of pure Bhakti — sharing the teachings of Srila
+            B.V. Narayana Gosvami and serving love and devotion to Sri
+            Radha-Krishna.
+          </p>
+          <div className="bb-hero-cta bb-reveal bb-d2">
+            <Link href="/about" className="bb-btn bb-btn-terra">
+              Discover our mission
+            </Link>
+            <Link href="#join" className="bb-btn bb-btn-outline">
+              Join the family
+            </Link>
+          </div>
         </div>
       </div>
       <div className="bb-hero-dots">

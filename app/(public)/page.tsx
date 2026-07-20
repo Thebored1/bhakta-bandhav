@@ -281,7 +281,7 @@ export default async function Home() {
           </div>
           <Link href="/events">All events →</Link>
         </div>
-        <div>
+        <div className="bb-event-list">
           {events.map((ev, i) => (
             <div
               className={`bb-event-row bb-reveal bb-d${Math.min(i + 1, 3)}`}

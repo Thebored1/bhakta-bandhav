@@ -261,8 +261,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 0 64px;
-  max-width: 780px;
+  /* Match the centered 1440px content column used by the rest of the page so
+     the hero text lines up with the sections below on wide screens. */
+  padding: 0 max(64px, calc((100% - 1440px) / 2));
+}
+.bb-hero-content {
+  width: 100%;
+  max-width: 620px;
 }
 .bb-hero-inner .bb-eyebrow {
   color: #ffffff;
@@ -400,7 +405,7 @@
 
 /* ---- darshana ---- */
 .bb-darshana {
-  width: min(1080px, 94%);
+  width: min(1440px, 94%);
   margin: 0 auto;
   text-align: center;
 }
@@ -445,7 +450,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 64px;
   align-items: center;
-  max-width: 1180px;
+  max-width: 1440px;
   margin: 0 auto;
 }
 .bb-grid2--books {
@@ -558,6 +563,8 @@
   grid-template-columns: 2fr 1fr 1fr;
   grid-template-rows: 210px 210px;
   gap: 14px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .bb-fest-grid img {
   width: 100%;
@@ -578,6 +585,13 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 44px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.bb-event-list {
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .bb-events-head h2 {
   color: #ffffff;
@@ -652,6 +666,9 @@
   justify-content: space-between;
   align-items: flex-end;
   margin-bottom: 44px;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .bb-blog-head h2 {
   margin: 14px 0 0;
@@ -666,6 +683,8 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
+  max-width: 1440px;
+  margin: 0 auto;
 }
 .bb-blog-card img {
   width: 100%;
